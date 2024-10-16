@@ -247,24 +247,27 @@ label end_decision_1:
  show car neutral
  "He grins and holds his phone under his maw on high like a flashlight"
  #[dim scene a bit except for reeds face or at least reed]
+ show reedStory neutral
  show car neutral:
-  matrixcolor BrightnessMatrix(-0.5)
+  matrixcolor BrightnessMatrix(-0.25)
  with Dissolve(2)
  #[cut out the music]
  stop music
- show car reed at carBump
+ show reedStory speak
  Re "Many years ago, it was an empire of steel processing, even got into plane building during the great war. The family that ran it were geniuses of their craft, and had perfected the art of worker exploitation."
- show car neutral
+ show reedStory neutral
  "He sits up and leans over as he gets sucked into his tale"
- show car reed
+ show reedStory speak
  Re "Once it finally came time to retire or refit the plant, they decided to keep its doors wide open until the place started really collapsing." 
  Re "The death rates of the underpaid workers broke some international records, and in ‘62 the government finally shut down the operation."
  Re "Rumors say ever since, the victims' spirits continued to wander the crumbling halls, seeking vengeance on those that wronged them."
- show car neutral
+ show reedStory neutral
+ pause 0
  #[return bright levels to normal]
  show car neutral:
   matrixcolor BrightnessMatrix(0)
  with dissolve
+ hide reedStory neutral
  "Reed puts away his phone and goes back to finishing his joint."
  show car trish at carBump
  T "You don't think it's actually haunted do you?"
@@ -288,8 +291,9 @@ label end_decision_1:
  F "I mean, he’s got a point."
  show car neutral
  #[everything except anon dims out a bit]
+ show anonThink
  show car neutral:
-  matrixcolor BrightnessMatrix(-0.5)
+  matrixcolor BrightnessMatrix(-0.25)
  with Dissolve(2)
  #[return music but quiet]
  play music maltShopTheme volume 0.25
@@ -298,24 +302,47 @@ label end_decision_1:
  "I've been planning this shit for months. The perfect location, the perfect date, and a perfect crowd to witness my masterpiece."
  "Reed was easy to bribe with a few well earned herbal remedies."
  #[thought bubble graphic appears, dot by dot, about 2 or 3 dots whatever looks good, then the bubble, the animations should fit inside the bubble.)
+ show thought bubble1
+ with dissolve
+ show thought bubble2
+ with dissolve
+ show thought bubble3
+ with dissolve
+ show thought bubble4
+ with dissolve
  #[pull up first 2 frame loop]
+ show animation animation1
  "The stage was all set."
  #[pull up second 2 frame loop]
+ show animation animation2
  "Step one, play it off legit. Slowly get them boozed up."
  #[pull up third 2 frame loop]
+ show animation animation3
  "Step two, once they’re cooked, Reed and I slip away."
  #[pull up fourth 2 frame loop]
+ show animation animation4
  "Step three, slather Reed in phosphorescent paint until he glows nuclear waste. Then suit him up."
  #[pull up fifth 2 frame loop]
+ show animation animation5
  "The coup de grace, come back screaming, like I've practiced."
  #[pull up 6th 2 frame loop]
+ show animation animation6
  "Reed follows close behind, and nails me in the back with the trick knife. The fake blood packs taped to my back pop. Pray that Fang gets scared."
  #[pull up 7th 2 frame loop]
+ show animation animation7
  "If everything goes right, the chase begins."
  #[pull up 8th 2 frame loop]
+ show animation animation8
  "Make sure to get it all on film."
  #[pull up 9th 2 frame loop]
+ show animation animation9
  "Then, final objective: Survive."
  #[Cut music for next score and cut to black]
-
+ stop music
+ hide animation animation9
+ hide car neutral
+ hide thought bubble4
+ hide anonThink
+ window auto hide
+ pause 1
  return
