@@ -345,4 +345,189 @@ label end_decision_1:
  hide anonThink
  window auto hide
  pause 1
+ 
+ "It's not long before we finally arrive at our destination. We collect our goods and disembark from Reed's pussy wagon to take in the view."
+ #[cut in outside van and ambient sounds]
+ scene outsideVan
+ play music outsideAmbience
+ #[the gangs sprites all enter together stage left in neutral pose]
+ show reed neutral:
+  xcenter -0.5 yalign 0.1
+  easein_cubic 1 xcenter 0.85  
+  xzoom -1
+ show trish neutral:
+  xcenter -0.5 yalign 0.1
+  easein_cubic 1 xcenter 0.6
+  xzoom -1
+ show fang neutral:
+  xcenter -0.5 yalign 0.1
+  easein_cubic 1 xcenter 0.4
+ show anon neutral:
+  xcenter -0.5 yalign 0.1
+  easein_cubic 1 xcenter 0.2
+ pause 1.1
+ Re "Well this is the place!"
+ F "Oh my god."
+ #[anon switches to the thumbs up one]
+ show anon happy
+ with dissolve
+ A "Hey, what it lacks in youthful good looks, it makes up for in character!"
+ #[switch trish to considering]
+ show trish considering
+ with dissolve
+ T "You really didn’t grow up in the projects, did ya?"
+ #[Anon switches to grin]
+ show anon grin
+ with dissolve
+ A "I’m from Rock Bottom."
+ T " …Fair. "
+ #[anon & trish expression back to neutral, all sprites exit stage right (maybe trish lags behind a little?)]
+ show anon neutral
+ show trish neutral
+ with dissolve
+ show reed neutral:
+  xzoom 1
+  easein_cubic 1 xcenter 1.5
+ show fang neutral:
+  easein_cubic 1 xcenter 1.5
+ show anon neutral:
+  easein_cubic 1 xcenter 1.5
+ show trish neutral:
+  pause 0.5
+  xzoom 1
+  pause 0.5
+  xzoom -1
+  pause 0.25
+  xzoom 1
+  pause 0.25
+  easein_cubic 1 xcenter 1.5
+ pause 1.5
+ #[screen fades to black]
+ scene black with dissolve
+ pause 0.5
+ "We approach the derelict old cinder block, It's a miracle a junk-heap like this is still standing. I reach over into Reeds backpack and pull out my camera."
+ #[Fade in to front entrance pic, reed fang and trish are all already standing there, the camera canvas is active now, anon is permanently off screen while camera is in play.]
+ scene outsideBuilding
+ show fang neutral:
+  xcenter 0.25 yalign 0.1
+ show trish neutral:
+  xcenter 0.50 yalign 0.1
+ show reed neutral:
+  xcenter 0.85  yalign 0.1 xzoom-1
+ show camera
+ show recording
+ with dissolve
+ F "What do you need that thing for?"
+ "I can’t contain my smug grin."
+ A "Making memories"
+ #[trish switches to unimpressed]
+ show trish unimpressed
+ T "And record us committing a misdemeanor?"
+ A "Fine, I’ll keep you out of the shot. But also, ghosts are supposed to show up on cameras! Seen it on TV."
+ T "Oh, on the show that plays before Ancient Aliens?"
+ A "Maybe."
+ #[fang exits on the closest side]
+ show fang neutral:
+  xzoom -1
+ with dissolve
+ show fang neutral:
+  easein_cubic 1 xcenter -0.5
+ with None
+ show reed neutral:
+  linear 0.25 xcenter 0.70
+ show trish unimpressed:
+  linear 0.25 xcenter 0.35
+ "Fang stifles a laugh and leans in, and whispers into my ear." 
+ F "Level with me, dweeb. Do you actually believe in ghosts?"
+ A "I’m just saying that I personally cannot take a mere mortal’s word on such a fantastical thing."
+ F "You’re trying to get on TV, arent you?"
+ A "Perchance."
+ #[switch trish to considering]
+ show trish considering
+ with dissolve
+ T "You can’t just say perchance."
+ #[Switch reed to explanatory]
+ show reed explanatory
+ with dissolve
+ Re "All set?"
+ $ patience = 0
+ jump decision_2
+ 
+label decision_2:
+ show reed neutral
+ show trish neutral
+ if patience >= 5:
+  jump decision_2_p
+ menu:
+  "Yes":
+   jump decision_2_yes
+  "No":
+   jump decision_2_no
+ 
+label decision_2_yes: 
+ A "Lubed and loaded."
+ F "Cocked and Locked."
+ T "Unfortunately."
+ #[switch reed to happy]
+ show reed happy
+ with dissolve
+ Re "Right on."
+ #[cut to black except the camera]
+ hide outsideBuilding
+ hide fang
+ hide trish
+ hide reed
+ with dissolve
+ #[play door opening sounds]
+ play sound doorOpening
+ "Reed strains against the rusty iron slabs until they finally shriek in protest as they give against his incredible strength, he waves us in with a dorky bow and we take a moment to absorb our new surroundings."
+ #[End branch, Begin section 2]
+ jump snootjam_storyline_2
+
+label decision_2_no:
+ A "…"
+ Re "You need more time?"
+ 
+ menu:
+  "Yeah":
+   jump decision_2_yeah
+  "This reeks":
+   jump decision_2_tr
+   
+label decision_2_yeah:
+ $ patience += 1
+ "You take a moment to prepare yourself."
+ Re "Ready now?"
+ #[return to Yes/No]
+ jump decision_2
+
+label decision_2_tr:
+ A "You know what, Trish is right, this is stupid. Let’s go somewhere else."
+ T "Finally, some sense."
+ F "Alright, I know the perfect beach to go drink on!"
+ Re "I hate sand."
+ T "It’s coarse and gets everywhere."
+ scene black with dissolve
+ "Reed and Trish skipped the beach, but Fang and I didnt."
+ "I got drunk and said something I shouldn't have, and Fang broke up with me."
+ "After a very long story involving me joining the Navy and Fang becoming addicted to Carfetanyl, we made up, fixed our problems, and lived happily ever after as successful musicians."
+ "The End?"
+ "Ending 2 of 4: “The Infinite Cope.”"
+ return
+
+#[If it’s not too much trouble, If you loop No/yeah more than 5 times than fork to this dialogue instead of going back to Yes/No]
+label decision_2_p:
+ F "Are you just going to stand there and stare at the wall all night? Come on!"
+ "Fang grabs my wrist and drags me towards the entrance"
+ hide outsideBuilding
+ hide fang
+ hide trish
+ hide reed
+ with dissolve
+ #[play door opening sounds]
+ play sound doorOpening
+ #(we can change this based on the picture we use)
+ "Reed strains against the rusty iron slabs until they finally shriek in protest as they give against his incredible strength, he waves us in with a dorky bow and we take a moment to absorb our new surroundings."
+ #[End branch, Begin section 2]
+ jump snootjam_storyline_2
  return
