@@ -414,8 +414,7 @@ label end_decision_1:
   xcenter 0.50 yalign 0.1
  show reed neutral:
   xcenter 0.85  yalign 0.1 xzoom-1
- show camera
- show recording
+ show screen anon_camera
  with dissolve
  F "What do you need that thing for?"
  "I can’t contain my smug grin."

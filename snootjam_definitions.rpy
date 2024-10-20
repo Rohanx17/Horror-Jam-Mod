@@ -1,8 +1,8 @@
-
+#Froomer Defines
 init python:
     mod_menu_access += [{
         'Name': "SnootJam",
-        'Label' : "snootjam_storyline_1"
+        'Label' : "fooly_cooly_preintro"
     }]
 
 init:
@@ -155,7 +155,8 @@ define audio.doorOpening = snootjamRoot+"music/door opening.mp3"
 transform carBump:
   linear 0.1 ycenter 0.48
   linear 0.1 ycenter 0.50
-  
+
+#MailMonk Defines
 default abandoned_door_opened = False
 
 define ANVL = nvl_narrator 
@@ -304,3 +305,40 @@ define audio.mystery_bgm = snootjamRoot+"sounds/something_happened.ogg" #this tr
 define audio.industrial_machine_ambient = snootjamRoot+"sounds/industrial_machine_cycle.ogg"
 define audio.fc_bgm = snootjamRoot+"opener assets/fooly_cooly_creature_feature.ogg"
 define audio.fc_cackle_sfx = snootjamRoot+"opener assets/witch_laugh.mp3"
+
+#Rohan Defines
+#Characters
+define goon = Character("???", color="FFFFFF")
+define FC = Character("Fooly Cooly", color="72D0EA")
+#BG's
+image basement = Image(snootjamRoot+"images/bg/basement.webp")
+image insidePic1 = Image(snootjamRoot+"images/bg/insidePic1.webp")
+image outside van = Image(snootjamRoot+"images/bg/outside van.webp")
+image stairs = Image(snootjamRoot+"images/bg/stairs.webp")
+#CG's
+image car complete = Image(snootjamRoot+"images/cg/car complete.webp")
+#Sprites
+image reed scream = Image(snootjamRoot+"images/sprite/reed scream.png")
+image reed scream flip = im.Flip(snootjamRoot+"images/sprite/reed scream.png", horizontal=True)
+image goon1 = Image(snootjamRoot+"images/sprite/goon1.png")
+image goon1 flip = im.Flip(snootjamRoot+"images/sprite/goon1.png", horizontal=True)
+image goon2 = Image(snootjamRoot+"images/sprite/goon2.png")
+image goon2 flip = im.Flip(snootjamRoot+"images/sprite/goon2.png", horizontal=True)
+image goon3 = Image(snootjamRoot+"images/sprite/goon3.png")
+image goon3 flip = im.Flip(snootjamRoot+"images/sprite/goon3.png", horizontal=True)
+image keys = Image(snootjamRoot+"images/sprite/keys.png")
+
+#Audio
+define carCrash = snootjamRoot+'audio/car crash.ogg'
+define carDoor = snootjamRoot+'audio/car door.mp3'
+define escape = snootjamRoot+'audio/escape.ogg'
+define doorCreaking = snootjamRoot+'audio/door creaking.mp3'
+define footsteps = snootjamRoot+'audio/footsteps.mp3'
+define insideCarNoise = snootjamRoot+'audio/inside car noise.mp3'
+define keyGet = snootjamRoot+'audio/key get.mp3'
+define lightSwitch = snootjamRoot+'audio/light switch.mp3'
+define lockSound = snootjamRoot+'audio/lock sound.mp3'
+define sneeze = snootjamRoot+'audio/sneeze.mp3'
+define tackle = snootjamRoot+'audio/tackle.mp3'
+define tarpPull = snootjamRoot+'audio/tarp pull.mp3'
+define worried = snootjamRoot+'audio/worried.ogg'

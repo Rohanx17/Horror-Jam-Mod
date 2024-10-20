@@ -2,7 +2,6 @@
     stop music fadeout 3.0
     
     # I know, there would be a scene with a camera before this label, so make sure you're using the right one/deleting show screen statement in here
-    show screen anon_camera
     scene black 
     with Dissolve(3)
     
@@ -1336,7 +1335,7 @@
     play sound fang_door_opened_sfx
     $ abandoned_door_opened = True
     
-    "The hinges make a horrible creaking sound {w=0.10}and stagnant, {w=0.10}metallic air flows from the basement."
+    "The hinges make a horrible cre  aking sound {w=0.10}and stagnant, {w=0.10}metallic air flows from the basement."
     
     "Dilapidated spiral stairs plunge into an inky abyss below, {w=0.10}leaving everything to the imagination."
     
@@ -1347,6 +1346,7 @@
     hide fang with dissolve
     
     "Without hesitation, {w=0.20}she steps inside its gaping maw and within moments, {w=0.10}the darkness envelops her completely, {w=0.10}leaving only the shrinking echoes of her boots against the steps as proof that she was there at all."
+    jump Chapter3
     
 
 
@@ -1412,5 +1412,7 @@ label fooly_cooly_preintro:
     stop music fadeout 5.0 
     play sound fc_cackle_sfx volume 1.2
     scene black with Dissolve(5)
-    
-    
+    camera:
+        ycenter 0.5 xcenter 0.5
+        zoom 1
+    jump snootjam_storyline_1
