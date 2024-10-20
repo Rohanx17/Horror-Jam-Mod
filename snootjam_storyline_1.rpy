@@ -321,7 +321,7 @@ label end_decision_1:
  "Step two, once they’re cooked, Reed and I slip away."
  #[pull up fourth 2 frame loop]
  show animation animation4
- "Step three, slather Reed in phosphorescent paint until he glows nuclear waste. Then suit him up."
+ "Step three, slather Reed in phosphorescent paint until he glows like nuclear waste. Then suit him up."
  #[pull up fifth 2 frame loop]
  show animation animation5
  "The coup de grace, come back screaming, like I've practiced."
@@ -488,9 +488,9 @@ label decision_2_no:
  Re "You need more time?"
  
  menu:
-  "Yeah":
+  "Yeah, one moment":
    jump decision_2_yeah
-  "This reeks":
+  "This reeks, let's leave":
    jump decision_2_tr
    
 label decision_2_yeah:

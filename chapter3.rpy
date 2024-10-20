@@ -3,6 +3,9 @@ label Chapter3:
    
     stop music fadeout(3)
     scene black with Dissolve(2)
+    camera:
+        ycenter 0.5 xcenter 0.5
+        zoom 1
   
     pause 1
     scene stairs
@@ -26,12 +29,20 @@ label Chapter3:
     "shining the weak light of her phone against a large metal door."
     "Her expression is stoic but intense, perhaps her nerves finally caught up with her."
 #zoom in effect
-    " I reach out and put my hand on her shoulder."
+    camera:
+        xcenter 0.5 ycenter 0.5 
+        linear 0.5 zoom 1.75 
+    "I reach out and put my hand on her shoulder."
 
-    show fang surprised with dissolve
 #fang moves slightly up and down
+    show fang surprised: 
+        easein 0.25 ycenter .5
+        easein 0.25 ycenter .655
+    pause 0.5 
     show fang angry flip with dissolve
 #zoom back out to normal
+    camera:
+        linear 0.5 xcenter 0.5 zoom 1
     "She flinches at my touch, and she nearly swings a left hook into my cheek before realizing it's me."
 
     F "Oh it’s just a dweeb. A little warning would be nice."
@@ -104,12 +115,13 @@ label Chapter3:
     hide black
 #make reed close to the screen
     show reed neutral:
-        xcenter 0.4 yalign 0.1
+        xcenter 0.4 yalign 0.1 zoom 2.0
     show trish smug at tright
      
     A "Dammit Reed, don't sneak up on me like that."
 #move reed back to normal distance
-    show reed explanatory with dissolve
+    show reed explanatory:
+        linear 1 zoom 1
 
     Re "Sorry bro, but I mean, it's a staircase."
     Re "Who else would it be?"
@@ -194,6 +206,10 @@ label Chapter3:
     "the inside sits stacked wall to wall with cellophane bricks."
 
 #reed dips down slightly then back up
+    show reed:
+        easein 0.5 ycenter 0.8
+        pause 1.0
+        easein 1.0 ycenter 0.655
 
     "He takes one out and opens it up to reveal a compressed cake of something white."
 
@@ -259,7 +275,7 @@ label Chapter3:
 
     goon "-told you I heard something. The next shipment isn't due till tomorrow. Keep ya pants on, it'll only take a minute."
 
-    goon "“It's probably just some rats like always. Ya so paranoid Paulie. We haven't had to worry about snoops since the Boss-”"
+    goon "It's probably just some rats like always. Ya so paranoid Paulie. We haven't had to worry about snoops since the Boss-"
 
     "The voices go silent."
     "I can practically hear my heartbeat thump through my chest."
@@ -275,7 +291,7 @@ label Chapter3:
     stop music
     play sound tarpPull
 
-    "Come on, it's late and I want to get out of here. Any longer and the boys are gonna start without-"
+    goon "Come on, it's late and I want to get out of here. Any longer and the boys are gonna start without-"
 
     play sound sneeze
 
@@ -290,9 +306,9 @@ label Chapter3:
     show goon3:
      xcenter 0.1 yalign 0.1  
 
+#set trish at lower yaxis
     show trish surprised flip:
-     xcenter 0.85 yalign 0.1  
-#set trish at lower yaxis   
+        xcenter 0.85 ycenter 0.75  
 
     hide black with dissolve
 
@@ -304,35 +320,67 @@ label Chapter3:
       easein 1 xcenter 0.85
 
     show trish: 
-      linear 5 xcenter 0.95
-
-
-    pause 1
-
+      easein 0.5 xcenter 0.90
+    "After a moment, one ducks down and spots her." 
+ 
     show goon1:
       easein_cubic 1 xcenter 0.5
 
     show trish:
-      easein_cubic 1 xcenter 0.6  
-#raise goon back to normal height, flip trish upside down and make her feet even with his head
-#rapidly flip trish left and right until reeds tackle
-    
-    show trish angry with dissolve
-
-    "After a moment, one ducks down and spots her." 
+      easein_cubic 1 xcenter 0.6
     "She yelps as he pulls her out by the leg,"
+#raise goon back to normal height, flip trish upside down and make her feet even with his head
+    show trish: 
+        linear 0.5 rotate 180 
+    pause 0.5
+#rapidly flip trish left and right until reeds tackle
+    show trish angry:
+        linear 0.25 xzoom -1 
+        linear 0.25 xzoom 1 
+        repeat
     "holding her like a plucked chicken while she swats at them out of reach."
 
-    goon "The man wears a horrible, toothy grin. “Well, what do we have here? I think someone owes me an apology.”"
+    "The man wears a horrible, toothy grin."
+    goon "Well, what do we have here? I think someone owes me an apology."
 
     goon "Yeah sure. I'll go call the 'exterminator', and we can get this little infestation cleaned up."
 
 #reed(angry) moves in front stage left at high speed, upon touching the goon holding trish all three fall to ground(reed fell kinda like this before anon/fang study date)
+    show reed angry:
+        xcenter 1.5
+        linear 0.5  xcenter 0.5
+    pause 0.5 
+    show reed:
+        linear 0.1 xcenter 0.45
+        linear 0.25 xcenter 0.4 ycenter 1.99
+    show goon1:
+        linear 0.1  xcenter 0.45
+        linear 0.25 xcenter 0.40   ycenter 1.99
+    show goon2:
+        linear 0.1 xcenter 0.20
+        linear 0.25 xcenter 0.15 ycenter 1.99
+    show goon3:
+        linear 0.1 xcenter 0.05
+        linear 0.25 xcenter 0.0 ycenter 1.99
+    show trish:
+        linear 0.1 xcenter 0.55
+        linear 0.25 xcenter 0.50 ycenter 1.99
 
     Re "TRISH!"
 #reed pops back up at center stage, key graphic appears at center and flies at screen/grows until deleted
+    hide reed
+    show reed neutral:
+        ycenter 1.99 xcenter 0.45 
+        linear 0.5 ycenter 0.655
+    pause 0.5
 
     Re "ANON RUN!"
+    
+    show keys:
+        ycenter 0.5 xcenter 0.5
+        linear 0.5 zoom 4
+    pause 0.5
+    hide keys
     play sound keyGet
 
     "Reed throws me his keys and I pop up to catch them"
@@ -341,7 +389,8 @@ label Chapter3:
     hide screen anon_camera
     scene black with dissolve 
 
-    goon "“Hey don't let those kids get away! Says the goon grappling with Reed," 
+    goon "“Hey don't let those kids get away!"
+    "Says the goon grappling with Reed," 
     "as the one he attacked picks himself back up and pulls out a knife."
 
     scene insidePic1
@@ -386,7 +435,8 @@ label Chapter3:
     scene outside van with dissolve
  
 #need to get the volume to lower without restarting it 
-    play music escape volume 0.25
+    #play music escape volume 0.25
+    $ renpy.music.set_volume(0.25, 0.5, 'music')
 
     pause 2
 
@@ -435,6 +485,7 @@ label Chapter3:
     "doing my best to keep from smashing us into a wall. Fang looks over, her nerves completely shot."
 
     F "Where are we going?"
+    show car complete at carBump
 
     A "The police station? Your Dad's house?"
     A "I don't know just somewhere we can get away from the three stooges and let someone important know what happened."
@@ -446,6 +497,7 @@ label Chapter3:
     A "Not as bad as those guys will, now let me drive."
 
     F "Christ, why did I ever agree to come out here?"
+    show car complete at carBump
     F "We should have just gone drinking at the beach like we always do."
 
     A "Hey, I just wanted to have a fun night out with my friends."
@@ -460,6 +512,7 @@ label Chapter3:
     A "Well, maybe if SOMEONE would have fucking left the hornets' nest alone when I asked them to split, they'd still be here!"
   
     F "ARE YOU SAYING THIS IS MY FAULT!?"
+    show car complete at carBump
 
     A "WELL IT SURE AS HELL ISN'T MINE!"
 
@@ -472,6 +525,7 @@ label Chapter3:
     A "WHAT!?"
 
     F "THE ROAD!"
+    show car complete at carBump
 
     A "OH SHI-"
 

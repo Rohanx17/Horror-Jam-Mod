@@ -345,7 +345,7 @@
     
     show trish flip annoyed with dissolve
     
-    T "Those aren’t tits, those are floatation devices.”"
+    T "Those aren’t tits, those are floatation devices."
     
    
     
@@ -1046,7 +1046,7 @@
     
     T "Well, I think my horoscopes have been pretty accurate."
     
-    F "No they make them vague so they always apply." 
+    F "No, they make them vague, so they always apply." 
     
     F "About as relevant as fortune cookies."
     
@@ -1335,7 +1335,7 @@
     play sound fang_door_opened_sfx
     $ abandoned_door_opened = True
     
-    "The hinges make a horrible cre  aking sound {w=0.10}and stagnant, {w=0.10}metallic air flows from the basement."
+    "The hinges make a horrible creaking sound {w=0.10}and stagnant, {w=0.10}metallic air flows from the basement."
     
     "Dilapidated spiral stairs plunge into an inky abyss below, {w=0.10}leaving everything to the imagination."
     
@@ -1346,11 +1346,15 @@
     hide fang with dissolve
     
     "Without hesitation, {w=0.20}she steps inside its gaping maw and within moments, {w=0.10}the darkness envelops her completely, {w=0.10}leaving only the shrinking echoes of her boots against the steps as proof that she was there at all."
+
+    "I throw a quick glance towards Reed and Trish, they appeared to share my sentiments, but were unsure how to proceed"
+    #[start a camera zoom into the door]
+    camera:
+        ycenter 0.5 xcenter 0.5
+        linear 15 zoom 2
+    "I switch on my flashlight, and without a moment to lose, I swallow my fear and follow her into the depths below."
     jump Chapter3
     
-
-
-
 label fooly_cooly_preintro:
     stop music fadeout 2.0
     $ quick_menu = False
