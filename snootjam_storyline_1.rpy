@@ -482,7 +482,7 @@ label decision_2_yes:
  play sound doorOpening
  "Reed strains against the rusty iron slabs until they finally shriek in protest as they give against his incredible strength, he waves us in with a dorky bow and we take a moment to absorb our new surroundings."
  #[End branch, Begin section 2]
- jump snootjam_storyline_2
+ jump goofy_investigation
 
 label decision_2_no:
  A "…"
@@ -529,5 +529,5 @@ label decision_2_p:
  #(we can change this based on the picture we use)
  "Reed strains against the rusty iron slabs until they finally shriek in protest as they give against his incredible strength, he waves us in with a dorky bow and we take a moment to absorb our new surroundings."
  #[End branch, Begin section 2]
- jump snootjam_storyline_2
+ jump goofy_investigation
  return
