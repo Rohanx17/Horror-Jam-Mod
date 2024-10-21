@@ -1365,15 +1365,31 @@ label fooly_cooly_preintro:
     pause 3.0
     
     stop ambient2 fadeout 3.0
-    play ambient fc_electricity_ambient fadein 3.0
+    play ambient fc_electricity_ambient fadein 3.0 volume 0.6
     play ambient1 fc_thunder_ambient fadein 3.0
-    play music fc_bgm  fadein 3.0   
+    play music fc_bgm  fadein 3.0 volume 1.2   
     
     
     
     show background_lightning_fc behind anim_static_fc:
         matrixcolor BrightnessMatrix(0.0)
+        pause 2.0
+        matrixcolor BrightnessMatrix(0.4) 
+        pause .25
+        matrixcolor BrightnessMatrix(0.0)
+        pause 1.5
+        matrixcolor BrightnessMatrix(0.4) 
+        pause .30
+        matrixcolor BrightnessMatrix(0.0)
         pause 2.5
+        matrixcolor BrightnessMatrix(0.4) 
+        pause .25
+        matrixcolor BrightnessMatrix(0.0)
+        pause 2.0
+        matrixcolor BrightnessMatrix(0.4) 
+        pause .20
+        matrixcolor BrightnessMatrix(0.0)
+        pause 0.1
         matrixcolor BrightnessMatrix(0.4) 
         pause .25
         repeat
@@ -1382,28 +1398,28 @@ label fooly_cooly_preintro:
     show table_fc behind anim_static_fc
 
     show puppet fc neutral behind table_fc:
-        ycenter 0.5 xcenter 0.5
+        ycenter 0.55 xcenter 0.48
         
          
     hide anim_static_fc with Dissolve (3)
     
-    pause 3.0
+    pause 1
     
     camera:
         ycenter 0.5 xcenter 0.5
-        linear 35 zoom 1.5
+        linear 35 zoom 2.0
     $ quick_menu = True
-    "Ghouls… {w=0.10}goblins… {w=0.10}monsters, {w=0.10}oh my!"
+    "Ghouls… {w=0.40}goblins… {w=0.40}monsters, {w=0.60}oh my!"
     
-    "Welcome to Fooly Cooly’s  {b}CREATURE FEATURE SHOW{/b}!"
+    "Welcome to Fooly Cooly’s{w=0.60}  {b}CREATURE{w=0.60} FEATURE{w=0.60} SHOW{/b}!"
     
     show puppet fc point up with dissolve
     
-    "Don’t move, don’t scream! {w}You’re watching channel 69’s Halloween eve movie marathon!"
+    "Don’t move,{w=0.20} don’t scream! {w}You’re watching channel 69’s Halloween eve movie marathon!"
     
-    "I'm your host with the most, {w=0.10}the ghost host, {w=0.10}professor Fooly Cooly!"
+    "I'm your host, {w=0.40}your ghost host, {w=0.30}with the most, {w=0.60}professor Fooly Cooly!"
     
-    "I will be with you…{w=0.20 }until the end! Muahahahaha"
+    "I will be with you…{w=0.60 }until{w=0.30} the end!{w=0.50} MUAHAHAHAHA!"
     
     show puppet fc point out with dissolve
     
@@ -1412,10 +1428,12 @@ label fooly_cooly_preintro:
     stop ambient1
     show background_lightning_fc:
         matrixcolor BrightnessMatrix(0.0)
-    stop ambient fadeout 5.0
-    stop music fadeout 5.0 
     play sound fc_cackle_sfx volume 1.2
-    scene black with Dissolve(5)
+    stop ambient fadeout 3.0
+    stop music fadeout 3.0 
+    
+    scene black with Dissolve(2)
+    pause 2
     camera:
         ycenter 0.5 xcenter 0.5
         zoom 1
