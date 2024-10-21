@@ -1,12 +1,12 @@
 #Froomer Defines
 init python:
     mod_menu_access += [{
-        'Name': "SnootJam",
-        'Label' : "fooly_cooly_preintro"
+        'Name': "Bump in the Night",
+        'Label' : "bitn_fooly_cooly_preintro"
     }]
 
 init:
- $ snootjamRoot = "mods/horrorJamModFroomerFork/assets/"
+ $ snootjamRoot = "mods/Bump in the Night/assets/"
  
 #Images
 image car neutral = Image(snootjamRoot+"images/the car.png")

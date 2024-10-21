@@ -1,4 +1,4 @@
-﻿label goofy_investigation:
+﻿label bitn_goofy_investigation:
     stop music fadeout 3.0
     
     # I know, there would be a scene with a camera before this label, so make sure you're using the right one/deleting show screen statement in here
@@ -1353,9 +1353,9 @@
         ycenter 0.5 xcenter 0.5
         linear 15 zoom 2
     "I switch on my flashlight, and without a moment to lose, I swallow my fear and follow her into the depths below."
-    jump Chapter3
+    jump bitn_Chapter3
     
-label fooly_cooly_preintro:
+label bitn_fooly_cooly_preintro:
     stop music fadeout 2.0
     $ quick_menu = False
     play ambient2 static_noise_sfx fadein 2.0
@@ -1437,4 +1437,4 @@ label fooly_cooly_preintro:
     camera:
         ycenter 0.5 xcenter 0.5
         zoom 1
-    jump snootjam_storyline_1
+    jump bitn_snootjam_storyline_1

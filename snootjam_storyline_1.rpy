@@ -1,4 +1,4 @@
-label snootjam_storyline_1:
+label bitn_snootjam_storyline_1:
 
  scene black
  with None
@@ -53,13 +53,13 @@ label snootjam_storyline_1:
 
  menu:
   "Play if off":
-   jump decision_1_pio
+   jump bitn_decision_1_pio
   "Keep quiet":
-   jump decision_1_kq
+   jump bitn_decision_1_kq
   "I fucked your mom":
-   jump decision_1_ifym
+   jump bitn_decision_1_ifym
    
-label decision_1_pio:
+label bitn_decision_1_pio:
  show car anon
  A "It’s a prank, not a dick. Don't take it so hard."
  show car trish at carBump
@@ -83,9 +83,9 @@ label decision_1_pio:
  show car reed
  Re "Mormons, usually. Gotta go to the catholic parties. Those guys roll DEEP before it even starts. Highly recommend it."
  show car neutral
- jump end_decision_1
+ jump bitn_end_decision_1
 
-label decision_1_kq:
+label bitn_decision_1_kq:
  show car trish
  T "Thought as much."
  show car neutral at carBump
@@ -121,9 +121,9 @@ label decision_1_kq:
  show car neutral
  "Everyone giggles."
  show car neutral at carBump
- jump end_decision_1
+ jump bitn_end_decision_1
 
-label decision_1_ifym:
+label bitn_decision_1_ifym:
  show car anon
  A "Your mom sure didn’t ask when she tongue punched my fart-box. Should have heard the sound I made."
  show car trish
@@ -183,9 +183,9 @@ label decision_1_ifym:
  A "Oh my god, please tell me all about Wienerschnitzel."
  show car neutral at carBump
  "Reed goes into a conspiracy theory about money laundering. The rabbit hole goes very far down there, and Reed takes us all to the bottom. Despite my heavy investment, Trish cuts him off after the fifth minute."
- jump end_decision_1
+ jump bitn_end_decision_1
  
-label end_decision_1:
+label bitn_end_decision_1:
  "Trish slouches in her seat and sighs."
  show car trish
  T "Alright. Where we heading? I guess we've still got a few hours before Ripley sends the locusts."
@@ -453,20 +453,20 @@ label end_decision_1:
  with dissolve
  Re "All set?"
  $ patience = 0
- jump decision_2
+ jump bitn_decision_2
  
-label decision_2:
+label bitn_decision_2:
  show reed neutral
  show trish neutral
  if patience >= 5:
-  jump decision_2_p
+  jump bitn_decision_2_p
  menu:
   "Yes":
-   jump decision_2_yes
+   jump bitn_decision_2_yes
   "No":
-   jump decision_2_no
+   jump bitn_decision_2_no
  
-label decision_2_yes: 
+label bitn_decision_2_yes: 
  A "Lubed and loaded."
  F "Cocked and Locked."
  T "Unfortunately."
@@ -484,26 +484,26 @@ label decision_2_yes:
  play sound doorOpening
  "Reed strains against the rusty iron slabs until they finally shriek in protest as they give against his incredible strength, he waves us in with a dorky bow and we take a moment to absorb our new surroundings."
  #[End branch, Begin section 2]
- jump goofy_investigation
+ jump bitn_goofy_investigation
 
-label decision_2_no:
+label bitn_decision_2_no:
  A "…"
  Re "You need more time?"
  
  menu:
   "Yeah, one moment":
-   jump decision_2_yeah
+   jump bitn_decision_2_yeah
   "This reeks, let's leave":
-   jump decision_2_tr
+   jump bitn_decision_2_tr
    
-label decision_2_yeah:
+label bitn_decision_2_yeah:
  $ patience += 1
  "You take a moment to prepare yourself."
  Re "Ready now?"
  #[return to Yes/No]
- jump decision_2
+ jump bitn_decision_2
 
-label decision_2_tr:
+label bitn_decision_2_tr:
  A "You know what, Trish is right, this is stupid. Let’s go somewhere else."
  T "Finally, some sense."
  F "Alright, I know the perfect beach to go drink on!"
@@ -531,5 +531,4 @@ label decision_2_p:
  #(we can change this based on the picture we use)
  "Reed strains against the rusty iron slabs until they finally shriek in protest as they give against his incredible strength, he waves us in with a dorky bow and we take a moment to absorb our new surroundings."
  #[End branch, Begin section 2]
- jump goofy_investigation
- return
+ jump bitn_goofy_investigation

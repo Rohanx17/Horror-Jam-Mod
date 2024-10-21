@@ -1,4 +1,4 @@
-label Chapter3:
+label bitn_Chapter3:
 
    
     stop music fadeout(3)
