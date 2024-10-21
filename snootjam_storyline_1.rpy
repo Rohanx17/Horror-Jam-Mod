@@ -247,9 +247,10 @@ label end_decision_1:
  show car neutral
  "He grins and holds his phone under his maw on high like a flashlight"
  #[dim scene a bit except for reeds face or at least reed]
- show reedStory neutral
- show car neutral:
+ hide car
+ show reedStoryBack:
   matrixcolor BrightnessMatrix(-0.25)
+ show reedStory neutral
  with Dissolve(2)
  #[cut out the music]
  stop music
@@ -264,10 +265,12 @@ label end_decision_1:
  show reedStory neutral
  pause 0
  #[return bright levels to normal]
- show car neutral:
+ show reedStoryBack:
   matrixcolor BrightnessMatrix(0)
  with dissolve
  hide reedStory neutral
+ hide reedStoryBack
+ show car neutral
  "Reed puts away his phone and goes back to finishing his joint."
  show car trish at carBump
  T "You don't think it's actually haunted do you?"
@@ -289,11 +292,11 @@ label end_decision_1:
  Re "No, but I’m a 6 foot 2 raptor, and I don’t doubt Fang’s ability to kill us all."
  show car fang at carBump
  F "I mean, he’s got a point."
- show car neutral
  #[everything except anon dims out a bit]
- show anonThink
- show car neutral:
+ hide car
+ show anonThinkBack:
   matrixcolor BrightnessMatrix(-0.25)
+ show anonThink
  with Dissolve(2)
  #[return music but quiet]
  play music maltShopTheme volume 0.25
@@ -340,9 +343,9 @@ label end_decision_1:
  #[Cut music for next score and cut to black]
  stop music
  hide animation animation9
- hide car neutral
  hide thought bubble4
  hide anonThink
+ hide anonThinkBack
  window auto hide
  pause 1
  
