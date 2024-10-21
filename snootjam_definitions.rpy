@@ -157,6 +157,17 @@ define audio.doorOpening = snootjamRoot+"music/door opening.mp3"
 transform carBump:
   linear 0.1 ycenter 0.48
   linear 0.1 ycenter 0.50
+  pause 2
+  linear 0.1 ycenter 0.48
+  linear 0.1 ycenter 0.50
+  pause 4
+  linear 0.1 ycenter 0.48
+  linear 0.1 ycenter 0.50
+  pause 3.5
+  linear 0.1 ycenter 0.48
+  linear 0.1 ycenter 0.50
+  pause 3
+  repeat
 
 #MailMonk Defines
 default abandoned_door_opened = False
