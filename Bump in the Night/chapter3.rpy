@@ -147,7 +147,7 @@ label bitn_Chapter3:
 
     "Wait"
     "This place was locked."
-    play music worried fadein 1.0
+    play music worried fadein 2.0
 
     A "Guys, I'm getting the feeling we shouldn't be down here."
     A "Let's just cut our losses and split."
@@ -413,7 +413,7 @@ label bitn_Chapter3:
 
     show fang very sad with dissolve  
 
-    pause 1
+    pause 1.5
 
     F "We have to go back...we can't just leave them here."
 
@@ -469,11 +469,11 @@ label bitn_Chapter3:
 
     A "I've played a lot of GTA, that'll have to be good enough."
 
-    stop music
+    stop music fadeout 1.0
 
     scene black with dissolve
 
-    play music insideCarNoise
+    play ambient insideCarNoise fadein 1.0
 
     "The engine roars to life."
     "I thank the gods that Reed doesn't drive a stick as I floor the gas to pull us out of there, leaving a fat rubber track in our wake."
@@ -531,9 +531,9 @@ label bitn_Chapter3:
 
     play sound carCrash
 
-    scene black 
+    scene black with dissolve 
 
-    pause 8
+    pause 9
 
 #scene ends here thismis an extra bit for the jam version only
 

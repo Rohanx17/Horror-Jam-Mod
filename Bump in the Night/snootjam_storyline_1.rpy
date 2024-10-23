@@ -2,9 +2,9 @@ label bitn_snootjam_storyline_1:
 
  scene black
  with None
- show car neutral
- with dissolve
- play music maltShopTheme
+ show car neutral with Dissolve(2)
+ play music maltShopTheme fadein 2.0
+ play ambient insideCarNoise fadein 2.0 volume 0.5
  show car anon
  A "-hey, it could have been worse."
  show car trish
@@ -178,7 +178,7 @@ label bitn_decision_1_ifym:
  "Reed is all too eager to indulge."
  show car reed
  Re "I’ve been thinking a lot about Wienerschnitzel."
- play music maltShopTheme
+ play music maltShopTheme fadein 2.0
  show car anon
  A "Oh my god, please tell me all about Wienerschnitzel."
  show car neutral at carBump
@@ -253,7 +253,7 @@ label bitn_end_decision_1:
  show reedStory neutral
  with Dissolve(2)
  #[cut out the music]
- stop music
+ stop music fadeout 2.0
  show reedStory speak
  Re "Many years ago, it was an empire of steel processing, even got into plane building during the great war. The family that ran it were geniuses of their craft, and had perfected the art of worker exploitation."
  show reedStory neutral
@@ -299,7 +299,7 @@ label bitn_end_decision_1:
  show anonThink
  with Dissolve(2)
  #[return music but quiet]
- play music maltShopTheme volume 0.25
+ play music maltShopTheme volume 0.20
  "While the rest of the gang find something else to yap about, I slump back in my seat as I rehearse my greatest plan yet."
  "Trish may have been amused by the appetizer, but the real show was just beginning."
  "I've been planning this shit for months. The perfect location, the perfect date, and a perfect crowd to witness my masterpiece."
@@ -330,7 +330,7 @@ label bitn_end_decision_1:
  "The coup de grace, come back screaming, like I've practiced."
  #[pull up 6th 2 frame loop]
  show animation animation6
- "Reed follows close behind, and nails me in the back with the trick knife. The fake blood packs taped to my back pop. Pray that Fang gets scared."
+ "Reed follows close behind, and nails me with the trick knife. The fake blood packs taped to my back pop. Pray that Fang gets scared."
  #[pull up 7th 2 frame loop]
  show animation animation7
  "If everything goes right, the chase begins."
@@ -341,18 +341,18 @@ label bitn_end_decision_1:
  show animation animation9
  "Then, final objective: Survive."
  #[Cut music for next score and cut to black]
- stop music
+ stop music fadeout 2.0
  hide animation animation9
  hide thought bubble4
  hide anonThink
  hide anonThinkBack
  window auto hide
  pause 1
- 
+ stop ambient fadeout 2.0
  "It's not long before we finally arrive at our destination. We collect our goods and disembark from Reed's pussy wagon to take in the view."
  #[cut in outside van and ambient sounds]
- scene outsideVan
- play music outsideAmbience
+ scene outsideVan with dissolve 
+ play music outsideAmbience fadein 2.0
  #[the gangs sprites all enter together stage left in neutral pose]
  show reed neutral:
   xcenter -0.5 yalign 0.1
@@ -421,7 +421,7 @@ label bitn_end_decision_1:
  with dissolve
  F "What do you need that thing for?"
  "I can’t contain my smug grin."
- A "Making memories"
+ A "Making memories."
  #[trish switches to unimpressed]
  show trish unimpressed
  T "And record us committing a misdemeanor?"
@@ -433,7 +433,7 @@ label bitn_end_decision_1:
   xzoom -1
  with dissolve
  show fang neutral:
-  easein_cubic 1 xcenter -0.5
+  easein_cubic 2 xcenter -0.5
  with None
  show reed neutral:
   linear 0.25 xcenter 0.70
@@ -475,6 +475,7 @@ label bitn_decision_2_yes:
  with dissolve
  Re "Right on."
  #[cut to black except the camera]
+ show black with dissolve
  hide outsideBuilding
  hide fang
  hide trish
@@ -505,9 +506,12 @@ label bitn_decision_2_yeah:
 
 label bitn_decision_2_tr:
  A "You know what, Trish is right, this is stupid. Let’s go somewhere else."
+ show trish smug with dissolve
  T "Finally, some sense."
  F "Alright, I know the perfect beach to go drink on!"
+ show reed angry with dissolve
  Re "I hate sand."
+ show trish unimpressed with dissolve
  T "It’s coarse and gets everywhere."
  scene black with dissolve
  "Reed and Trish skipped the beach, but Fang and I didnt."
@@ -518,9 +522,10 @@ label bitn_decision_2_tr:
  return
 
 #[If it’s not too much trouble, If you loop No/yeah more than 5 times than fork to this dialogue instead of going back to Yes/No]
-label decision_2_p:
+label bitn_decision_2_p:
  F "Are you just going to stand there and stare at the wall all night? Come on!"
  "Fang grabs my wrist and drags me towards the entrance"
+ show black with dissolve
  hide outsideBuilding
  hide fang
  hide trish

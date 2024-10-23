@@ -35,7 +35,7 @@
     
     "She points to the left at a set of double doors." 
     
-    "From the moonlight I can faintly make out a sign hangs above the doorway."
+    "From the moonlight I can faintly make out a sign hanging above the doorway."
     
     A "You mean the cars? {w=0.25}Probably a few decades too late on that one."
     
@@ -134,7 +134,7 @@
     
     F "We totally could have held a show here!"
 
-    A "Sure if you wanted to bring down the roof, {w=0.25}guess that would be cheaper than a demo team."  
+    A "Sure if you wanted to bring down the roof, {w=0.25}guess that'd be cheaper than a demo team."  
 
     show fang flip off happy with dissolve
     
@@ -161,9 +161,9 @@
     
     "I look at what's in her hands before looking around." 
     
-    T "Nah this place hasn't been a hobo den for a long time."
+    A "Nah this place hasn't been a hobo den for a long time."
     
-    T "There'd be old food cans and the like if it was, those types don't clean up."
+    A "There'd be old food cans and the like if it was, those types don't clean up."
     
     pause .5
     
@@ -202,7 +202,7 @@
     
     with dissolve
     
-    "We look over to the back corner and see him hunched over the decrepit remains of some old van from the 60's, {w=0.05}maybe even the 50's."
+    "We look over to the back corner and see him hunched over the decrepit remains of some old van that's more rust than vehicle."
     
     show reed flip explanatory with dissolve
     
@@ -251,7 +251,7 @@
     play sound van_horn_sfx volume 0.9
     
     show trish shock:
-      easein 0.25 ycenter 0.4
+      easein 0.25 ycenter 0.2
       easein 0.25 ycenter 0.655
             
     pause .5
@@ -279,7 +279,7 @@
     
     "I grin."
     
-    A "Not quite, {w=0.25}we've still got a lot of this building to explore, come on!"
+    A "Not quite, {w=0.25}we've still got a lot of building to explore, come on!"
     
     show trish considering with dissolve
     
@@ -418,14 +418,14 @@
             
             pause .25 
             
-            show trish shock dissolve
+            show trish shock with dissolve
             
             pause .25
             
             show trish indignant 
             T "Fang how could you!"
             
-            show fang flip embarass
+            show fang flip embarass with dissolve
             F "Sorry Trish…"
              
             show trish flip annoyed with dissolve
@@ -966,7 +966,7 @@
 
     stop music fadeout 2.0        
        
-    "As I finish my task I realize I take a moment to relieve myself in the bathroom I passed on the way over."
+    "As I finish my task, I take a moment to relieve myself in the bathroom I passed on the way over."
 
     play sound anon_bathroom_sfx
     
@@ -976,14 +976,14 @@
     scene abandoned_mirror_1 with Dissolve(1)
     
     "I stop in front of the entrance mirror to check myself, {w=0.20}just to make sure there's nothing on my pants."
-    
+    pause 1.0
     window hide 
     show anim_mirror_ghost
     play sound ghost_bathroom_sfx volume 0.5
     
     pause 2.0
     
-    scene abandoned_mirror_1
+    scene abandoned_mirror_2
     
     pause 1.0
     
@@ -1080,7 +1080,7 @@
     
     show anon grin
     
-    A "Maybe it was the ghost."
+    A "Maybe it was a ghost."
     
     
     show trish flip unimpressed
@@ -1132,7 +1132,7 @@
     play sound "audio/effects/cameraShutterClick.ogg"
     show screen anon_camera 
     
-    play ambient industrial_random_ambient fadein 1.0
+    #play ambient industrial_random_ambient fadein 1.0
     
     "The noise seems to get louder and quieter at random."
     
@@ -1146,7 +1146,7 @@
     
     A "The noises."
     
-    A "I don't know if you planted a speaker somewhere or actually found something operational {w=0.10}but were going to have to improvise."
+    A "I don't know if you planted a speaker somewhere or actually found something operational, {w=0.10}but we're going to have to improvise."
     
     A "So how about this when we reach the line I'll-"
     
@@ -1172,7 +1172,7 @@
     "I felt a chill run up my spine."
     
     "If it wasn't Reed, then...{nw}"
-    stop ambient
+    stop ambient fadeout 1.0
     
     pause 1.0
     
@@ -1203,7 +1203,7 @@
     
     F "Anon you can't seriously believe there's a ghost here.{nw}"
         
-    show fang flip shocked behind trish:
+    show fang flip surprised behind trish:
         xzoom 1.0
         pause .5
         xzoom -1.0 
@@ -1212,7 +1212,7 @@
         
     pause 1.5
     
-    show fang flip shocked:
+    show fang flip surprised:
         xzoom -1.0
 
     F "Hey, that noise just stopped."  
@@ -1337,7 +1337,7 @@
     
     "The hinges make a horrible creaking sound {w=0.10}and stagnant, {w=0.10}metallic air flows from the basement."
     
-    "Dilapidated spiral stairs plunge into an inky abyss below, {w=0.10}leaving everything to the imagination."
+    "A dilapidated staircase plunges into an inky abyss below, {w=0.10}leaving everything to the imagination."
     
     show trish flip annoyed
     show fang flip neutral:
@@ -1361,7 +1361,7 @@ label bitn_fooly_cooly_preintro:
     play ambient2 static_noise_sfx fadein 2.0
     scene black
     show anim_static_fc
-    with Dissolve(3)
+    with Dissolve(2)
     pause 3.0
     
     stop ambient2 fadeout 3.0
@@ -1428,10 +1428,10 @@ label bitn_fooly_cooly_preintro:
     stop ambient1
     show background_lightning_fc:
         matrixcolor BrightnessMatrix(0.0)
-    play sound fc_cackle_sfx volume 1.2
+    
     stop ambient fadeout 3.0
     stop music fadeout 3.0 
-    
+    play sound fc_cackle_sfx volume 1.2
     scene black with Dissolve(2)
     pause 2
     camera:

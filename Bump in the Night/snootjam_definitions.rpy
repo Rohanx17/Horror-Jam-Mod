@@ -1,3 +1,4 @@
+#Froomer Defines
 init python:
     mod_menu_access += [{
         'Name': "Bump in the Night",
@@ -168,6 +169,7 @@ transform carBump:
   pause 3
   repeat
 
+#MailMonk Defines
 default abandoned_door_opened = False
 
 define ANVL = nvl_narrator 
@@ -317,6 +319,7 @@ define audio.industrial_machine_ambient = snootjamRoot+"sounds/industrial_machin
 define audio.fc_bgm = snootjamRoot+"opener assets/fooly_cooly_creature_feature.ogg"
 define audio.fc_cackle_sfx = snootjamRoot+"opener assets/witch_laugh.mp3"
 
+#Rohan Defines
 #Characters
 define goon = Character("???", color="FFFFFF")
 define FC = Character("Fooly Cooly", color="72D0EA")
