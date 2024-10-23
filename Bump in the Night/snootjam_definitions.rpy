@@ -1,4 +1,3 @@
-#Froomer Defines
 init python:
     mod_menu_access += [{
         'Name': "Bump in the Night",
@@ -6,352 +5,338 @@ init python:
     }]
 
 init:
- $ snootjamRoot = "mods/Bump in the Night/assets/"
- 
+    $ bitnRoot = "mods/Bump in the Night/assets/"
+
+    $ bitnImages = bitnRoot+"images/"
+    $ bitnSprites = bitnImages+"sprites/"
+    $ bitnCgs = bitnImages+"cgs/"
+    $ bitnBgs = bitnImages+"bgs/"
+    $ bitnScreens = bitnImages+"screens/"
+    $ bitnMisc = bitnImages+"misc/"
+
+    $ bitnSounds = bitnRoot+"sounds/"
+    $ bitnMusic = bitnSounds+"music/"
+    $ bitnEffects = bitnSounds+"effects/"
+    $ bitnAmbience = bitnSounds+"ambience/"
+
 #Images
-image car neutral = Image(snootjamRoot+"images/the car.png")
-image car anon = Image(snootjamRoot+"images/anonCar.png")
-image car reed = Image(snootjamRoot+"images/reedCar.png")
-image car fang = Image(snootjamRoot+"images/fangCar.png")
-image car trish = Image(snootjamRoot+"images/trishCar.png")
-image reedStory neutral = Image(snootjamRoot+"images/reedStory.png")
-image reedStory speak = Image(snootjamRoot+"images/reedStorySpeak.png")
-image reedStoryBack = Image(snootjamRoot+"images/reedStory2.png")
-image anonThink = Image(snootjamRoot+"images/anonThink.png")
-image anonThinkBack = Image(snootjamRoot+"images/anonThink2.png")
-image thought bubble1 = Image(snootjamRoot+"images/Bubble1.png")
-image thought bubble2 = Image(snootjamRoot+"images/Bubble2.png")
-image thought bubble3 = Image(snootjamRoot+"images/Bubble3.png")
-image thought bubble4 = Image(snootjamRoot+"images/Bubble4.png")
-image black = Image(snootjamRoot+"images/black.png")
-image outsideVan = Image(snootjamRoot+"images/outside van.webp")
-image outsideBuilding = Image(snootjamRoot+"images/outside building.webp")
-image camera = Image(snootjamRoot+"images/viewfinder.webp")
-image recording:
- snootjamRoot+"images/rec.webp"
- zoom 0.75
- xcenter 0.92
- ycenter 0.093
- pause 0.50
- matrixcolor OpacityMatrix(0)
- pause 0.25
- matrixcolor OpacityMatrix(1)
- repeat
 
-#Thought bubble Animations
-image animation animation1:
- snootjamRoot+"images/animation 1.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.3
- snootjamRoot+"images/animation 1.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.3
- repeat
-image animation animation2:
- snootjamRoot+"images/animation 2.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.3
- snootjamRoot+"images/animation 2.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.3
- repeat
-image animation animation3:
- snootjamRoot+"images/animation 3.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.3
- snootjamRoot+"images/animation 3.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.3
- repeat
-image animation animation4:
- snootjamRoot+"images/animation 4.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- snootjamRoot+"images/animation 4.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- repeat
-image animation animation5:
- snootjamRoot+"images/animation 5.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- snootjamRoot+"images/animation 5.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- repeat
-image animation animation6:
- snootjamRoot+"images/animation 6.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- snootjamRoot+"images/animation 6.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- repeat
-image animation animation7:
- snootjamRoot+"images/animation 7.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- snootjamRoot+"images/animation 7.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- repeat
-image animation animation8:
- snootjamRoot+"images/animation 8.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- snootjamRoot+"images/animation 8.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.4
- repeat
-image animation animation9:
- snootjamRoot+"images/animation 9.1.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.5
- snootjamRoot+"images/animation 9.2.png"
- zoom 0.30
- xcenter 0.64
- ycenter 0.15
- pause 0.5
- repeat
- 
-#Music
-define audio.maltShopTheme = snootjamRoot+"music/scooby looped.ogg"
-define audio.outsideAmbience = snootjamRoot+"music/ambient noises for outside.mp3"
-define audio.doorOpening = snootjamRoot+"music/door opening.mp3"
+#Sprites
 
-#Transforms
-transform carBump:
-  linear 0.1 ycenter 0.48
-  linear 0.1 ycenter 0.50
-  pause 2
-  linear 0.1 ycenter 0.48
-  linear 0.1 ycenter 0.50
-  pause 4
-  linear 0.1 ycenter 0.48
-  linear 0.1 ycenter 0.50
-  pause 3.5
-  linear 0.1 ycenter 0.48
-  linear 0.1 ycenter 0.50
-  pause 3
-  repeat
+#Fooly Cooly
+image puppet fc neutral = bitnSprites+"foolyCooly/fooly neutral.webp"
+image puppet fc point up = bitnSprites+"foolyCooly/fooly point up.webp"
+image puppet fc point out = bitnSprites+"foolyCooly/fooly point out.webp"
 
-#MailMonk Defines
-default abandoned_door_opened = False
+#Goons
+image goon1 = Image(bitnSprites+"goons/goon1.png")
+image goon1 flip = im.Flip(bitnSprites+"goons/goon1.png", horizontal=True)
+image goon2 = Image(bitnSprites+"goons/goon2.png")
+image goon2 flip = im.Flip(bitnSprites+"goons/goon2.png", horizontal=True)
+image goon3 = Image(bitnSprites+"goons/goon3.png")
+image goon3 flip = im.Flip(bitnSprites+"goons/goon3.png", horizontal=True)
 
-define ANVL = nvl_narrator 
+#CGs
 
-image abandoned_atrium = snootjamRoot+"pics/1920x1080/insidePic1.webp"
-image abandoned_acoustics = snootjamRoot+"pics/1920x1080/insidePic2.webp"
-image abandoned_graffiti = snootjamRoot+"pics/1920x1080/insidePic3.webp"
-image abandoned_depth = snootjamRoot+"pics/1920x1080/insidePic4.webp"
-image abandoned_conveyor = snootjamRoot+"pics/1920x1080/insidePic5.webp"
-image abandoned_uptosomething = snootjamRoot+"pics/1920x1080/insidePic6.webp"
-image abandoned_somewhere = snootjamRoot+"pics/1920x1080/insidePic7.webp"
-image abandoned_door = ConditionSwitch("abandoned_door_opened == False", snootjamRoot+"pics/1920x1080/doorClosed.webp", "abandoned_door_opened == True", snootjamRoot+"pics/1920x1080/doorOpen.webp")
+#Opening Car
+image car neutral = Image(bitnCgs+"openingCar/the car.png")
+image car anon = Image(bitnCgs+"openingCar/anonCar.png")
+image car reed = Image(bitnCgs+"openingCar/reedCar.png")
+image car fang = Image(bitnCgs+"openingCar/fangCar.png")
+image car trish = Image(bitnCgs+"openingCar/trishCar.png")
+image reedStory neutral = Image(bitnCgs+"openingCar/reedStory.png")
+image reedStory speak = Image(bitnCgs+"openingCar/reedStorySpeak.png")
+image reedStoryBack = Image(bitnCgs+"openingCar/reedStory2.png")
+image anonThink = Image(bitnCgs+"openingCar/anonThink.png")
+image anonThinkBack = Image(bitnCgs+"openingCar/anonThink2.png")
 
+#Mirror Anon
+image abandoned_mirror_1 = bitnCgs+"mirrorAnon/anonMirror.webp"
+image abandoned_mirror_2 = bitnCgs+"mirrorAnon/AnonMirrorConfused.webp"
+image anim_mirror_ghost = Movie(play=bitnCgs+"mirrorAnon/mirror.webm", loop=False) #.gif was kind of useless, Ren'Py eats only video formats and frame-to-frame animation
 
-image abandoned_mirror_1 = snootjamRoot+"pics/1920x1080/anonMirror.webp"
-image abandoned_mirror_2 = snootjamRoot+"pics/1920x1080/AnonMirrorConfused.webp"
+image car complete = Image(bitnCgs+"car complete.webp")
 
-image anim_mirror_ghost = Movie(play=snootjamRoot+"pics/1920x1080/mirror.webm", loop=False) #.gif was kind of useless, Ren'Py eats only video formats and frame-to-frame animation
+#BGs
 
-image beer_anon = snootjamRoot+"pics/beer.webp"
-image beer_fang = snootjamRoot+"pics/beer.webp"
-image beer_trish = snootjamRoot+"pics/beer.webp"
- 
+#Fooly Cooly Opening
+image background_lightning_fc = bitnBgs+"foolyCoolyOpening/background.webp"
+image wall_fc = bitnBgs+"foolyCoolyOpening/wall.webp"
+image table_fc = bitnBgs+"foolyCoolyOpening/table.webp"
 
-image abandoned_graffiti_2 = snootjamRoot+"pics/1920x1080/insidePic3.webp" #for the easiest bluring workaround
+image outsideVan = Image(bitnBgs+"outside van.webp")
+image outsideBuilding = Image(bitnBgs+"outside building.webp")
+image abandoned_atrium = bitnBgs+"insidePic1.webp"
+image abandoned_acoustics = bitnBgs+"insidePic2.webp"
+image abandoned_graffiti = bitnBgs+"insidePic3.webp"
+image abandoned_depth = bitnBgs+"insidePic4.webp"
+image abandoned_conveyor = bitnBgs+"insidePic5.webp"
+image abandoned_uptosomething = bitnBgs+"insidePic6.webp"
+image abandoned_somewhere = bitnBgs+"insidePic7.webp"
+image abandoned_door = ConditionSwitch("abandoned_door_opened == False", bitnBgs+"doorClosed.webp", "abandoned_door_opened == True", bitnBgs+"doorOpen.webp")
+image abandoned_graffiti_2 = bitnBgs+"insidePic3.webp" #for the easiest bluring workaround
+image basement = Image(bitnBgs+"basement.webp")
+image stairs = Image(bitnBgs+"stairs.webp")
 
-# Reed enters the scene
-transform chill_move_right(decimal):
-    xcenter 1.0
-    ycenter .655
-    ease 2.0 xcenter decimal 
+#Screens
 
-transform chill_move_left(decimal):
-    xcenter 0.0
-    ycenter .655
-    ease 2.0 xcenter decimal 
-    
-
-# Trish enters the scene    
-transform rushed_move_right(decimal):
-    xcenter 1.0
-    ycenter .655
-    easein 2.0 xcenter decimal 
-
-transform rushed_move_left(decimal):
-    xcenter 0.0
-    ycenter .655
-    easein 2.0 xcenter decimal 
-
-
-# Fang enters the scene    
-transform insecure_move_right(decimal):
-    xcenter 1.0
-    ycenter .655
-    easeout 2.0 xcenter decimal     
-    
-transform insecure_move_left(decimal):
-    xcenter 0.0
-    ycenter .655
-    easeout 2.0 xcenter decimal         
-    
-
-# Anon enters the scene   
-transform casual_move_right(decimal):
-    xcenter 1.0
-    ycenter .655
-    ease_cubic 2.0 xcenter decimal  
-
-    
-transform casual_move_left(decimal):
-    xcenter 0.0
-    ycenter .655
-    ease_cubic 2.0 xcenter decimal   
-
-# Anon's Camera (do we have it in the original game?)
- 
+#Anon's Camera (do we have it in the original game?)
 image anon_camera_rec_dot:
-    "images/vfx/rec.webp"
+    bitnScreens+"/anonsCamera/rec.webp"
     alpha 0.0
     1.0
     alpha 1.0
     1.0
     repeat
- 
 screen anon_camera:
-    
     add "anim_static_fc" blend "multiply" alpha 0.2
-    add "images/vfx/viewfinder.webp"
+    add bitnScreens+"/anonsCamera/viewfinder.webp"
     add "anon_camera_rec_dot" xalign 0.935 yalign 0.0725
-
-
 screen forwarding:
-    
     add "anim_static_fc" blend "multiply" alpha 0.2
     add "images/vfx/fastforward.webp" xalign 0.5 yalign 0.5
- 
-#Fooly Cooly Stuff
-    
+
+#Misc
+
+#Anon Thoughts
+image thought bubble1 = Image(bitnMisc+"anonThoughts/Bubble1.png")
+image thought bubble2 = Image(bitnMisc+"anonThoughts/Bubble2.png")
+image thought bubble3 = Image(bitnMisc+"anonThoughts/Bubble3.png")
+image thought bubble4 = Image(bitnMisc+"anonThoughts/Bubble4.png")
+image animation animation1:
+    bitnMisc+"anonThoughts/animation 1.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.3
+    bitnMisc+"anonThoughts/animation 1.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.3
+    repeat
+image animation animation2:
+    bitnMisc+"anonThoughts/animation 2.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.3
+    bitnMisc+"anonThoughts/animation 2.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.3
+    repeat
+image animation animation3:
+    bitnMisc+"anonThoughts/animation 3.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.3
+    bitnMisc+"anonThoughts/animation 3.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.3
+    repeat
+image animation animation4:
+    bitnMisc+"anonThoughts/animation 4.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    bitnMisc+"anonThoughts/animation 4.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    repeat
+image animation animation5:
+    bitnMisc+"anonThoughts/animation 5.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    bitnMisc+"anonThoughts/animation 5.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    repeat
+image animation animation6:
+    bitnMisc+"anonThoughts/animation 6.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    bitnMisc+"anonThoughts/animation 6.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    repeat
+image animation animation7:
+    bitnMisc+"anonThoughts/animation 7.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    bitnMisc+"anonThoughts/animation 7.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    repeat
+image animation animation8:
+    bitnMisc+"anonThoughts/animation 8.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    bitnMisc+"anonThoughts/animation 8.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.4
+    repeat
+image animation animation9:
+    bitnMisc+"anonThoughts/animation 9.1.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.5
+    bitnMisc+"anonThoughts/animation 9.2.png"
+    zoom 0.30
+    xcenter 0.64
+    ycenter 0.15
+    pause 0.5
+    repeat
+
+image black = Image(bitnMisc+"black.png")
 image anim_static_fc:
-   snootjamRoot+"opener assets/static/webp/static1.webp"
-   pause .05
-   snootjamRoot+"opener assets/static/webp/static2.webp"
-   pause .05
-   snootjamRoot+"opener assets/static/webp/static3.webp"
-   pause .05
-   snootjamRoot+"opener assets/static/webp/static4.webp"   
-   repeat
+    bitnMisc+"static1.webp"
+    pause .05
+    bitnMisc+"static2.webp"
+    pause .05
+    bitnMisc+"static3.webp"
+    pause .05
+    bitnMisc+"static4.webp"   
+    repeat
+image beer_anon = bitnMisc+"beer.webp"
+image beer_fang = bitnMisc+"beer.webp"
+image beer_trish = bitnMisc+"beer.webp"
+image keys = Image(bitnMisc+"keys.png")
 
+#Sounds
 
-image background_lightning_fc = snootjamRoot+"opener assets/black and white/background.webp" 
-image wall_fc = snootjamRoot+"opener assets/black and white/wall.webp"
-image table_fc = snootjamRoot+"opener assets/black and white/table.webp"       
+#Music
+define audio.maltShopTheme = bitnMusic+"scooby looped.ogg"
+define audio.exploration_bgm = bitnMusic+"exploration_theme.ogg"
+define audio.party_bgm = bitnMusic+"nothing_ever_happens.ogg"
+define audio.mystery_bgm = bitnMusic+"something_happened.ogg" #this track has some artifacts (idk, seems not intended for my ear)
+define audio.fc_bgm = bitnMusic+"fooly_cooly_creature_feature.ogg"
+define escape = bitnMusic+"escape.ogg"
+define worried = bitnMusic+"worried.ogg"
 
-image puppet fc neutral = snootjamRoot+"opener assets/black and white/fooly neutral.webp"
-image puppet fc point up = snootjamRoot+"opener assets/black and white/fooly point up.webp"
-image puppet fc point out = snootjamRoot+"opener assets/black and white/fooly point out.webp"
+#Effects
+define audio.doorOpening = bitnEffects+"door opening.mp3"
+define audio.fang_pickup_sfx = bitnEffects+"fang_pick_up_hl.ogg"
+define audio.trish_pickup_sfx = bitnEffects+"trish_pick_up.ogg"
+define audio.reed_closing_door_sfx = bitnEffects+"closing_door.ogg" #also changed it a bit
+define audio.van_horn_sfx = bitnEffects+"dixie_car_horn.ogg"
+define audio.static_noise_sfx = bitnEffects+"static_noise.ogg"
+define audio.anon_bottle_throw_sfx = bitnEffects+"tada_throw.ogg"
+define audio.fang_attempt_door_sfx = bitnEffects+"locked_door.ogg"
+define audio.anon_bathroom_sfx = bitnEffects+"peeing.mp3"
+define audio.anon_spray_sfx = bitnEffects+"spray.mp3"
+define audio.ghost_bathroom_sfx = bitnEffects+"whoosh.mp3"
+define audio.reed_lighter_sfx = bitnEffects+"lighter.ogg" # made it louder manually + convert to ogg in process
+define audio.fang_scream_sfx = bitnEffects+"dolphine_call.ogg"
+define audio.gang_beer_sfx = bitnEffects+"beer_open_cap.ogg"
+define audio.fang_lockpick_sfx = bitnEffects+"lock_sound.mp3"
+define audio.fang_door_opened_sfx = bitnEffects+"creaking_door.mp3"
+define audio.fc_cackle_sfx = bitnEffects+"witch_laugh.mp3"
+define carCrash = bitnEffects+"car crash.ogg"
+define carDoor = bitnEffects+"car door.mp3"
+define doorCreaking = bitnEffects+"door creaking.mp3"
+define footsteps = bitnEffects+"footsteps.mp3"
+define insideCarNoise = bitnEffects+"inside car noise.mp3"
+define keyGet = bitnEffects+"key get.mp3"
+define lightSwitch = bitnEffects+"light switch.mp3"
+define lockSound = bitnEffects+"lock sound.mp3"
+define sneeze = bitnEffects+"sneeze.mp3"
+define tackle = bitnEffects+"tackle.mp3"
+define tarpPull = bitnEffects+"tarp pull.mp3"
 
+#Ambience
+define audio.outsideAmbience = bitnAmbience+"ambient noises for outside.mp3"
+define audio.industrial_random_ambient = bitnAmbience+"industrial_machine_cycle_random.ogg"
+define audio.fc_electricity_ambient = bitnAmbience+"electricity.ogg"
+define audio.fc_thunder_ambient = bitnAmbience+"thunder.mp3"
+define audio.industrial_machine_ambient = bitnAmbience+"industrial_machine_cycle.ogg"
 
-#Audio (have all the sounds here as variables are more convenient if you possibly be changing their storage locations too)
+#Transforms
 
-define audio.fang_pickup_sfx = snootjamRoot+"sounds/fang_pick_up_hl.ogg"
-define audio.trish_pickup_sfx = snootjamRoot+"sounds/trish_pick_up.ogg"
-define audio.reed_closing_door_sfx = snootjamRoot+"sounds/closing_door.ogg" #also changed it a bit
-define audio.van_horn_sfx = snootjamRoot+"sounds/dixie_car_horn.ogg"
-define audio.static_noise_sfx = snootjamRoot+"sounds/static_noise.ogg"
-define audio.anon_bottle_throw_sfx = snootjamRoot+"sounds/tada_throw.ogg"
-define audio.fang_attempt_door_sfx = snootjamRoot+"sounds/locked_door.ogg"
-define audio.anon_bathroom_sfx = snootjamRoot+"sounds/peeing.mp3"
-define audio.anon_spray_sfx = snootjamRoot+"sounds/spray.mp3"
-define audio.ghost_bathroom_sfx = snootjamRoot+"sounds/whoosh.mp3"
-define audio.reed_lighter_sfx = snootjamRoot+"sounds/lighter.ogg" # made it louder manually + convert to ogg in process
-define audio.fang_scream_sfx = snootjamRoot+"sounds/dolphine_call.ogg"
-define audio.gang_beer_sfx = snootjamRoot+"sounds/beer_open_cap.ogg"
-define audio.industrial_random_ambient = snootjamRoot+"sounds/industrial_machine_cycle_random.ogg"
-define audio.fc_electricity_ambient = snootjamRoot+"opener assets/electricity.ogg"
-define audio.fc_thunder_ambient = snootjamRoot+"opener assets/thunder.mp3"
+#Reed enters the scene
+transform chill_move_right(decimal):
+    xcenter 1.0
+    ycenter .655
+    ease 2.0 xcenter decimal 
+transform chill_move_left(decimal):
+    xcenter 0.0
+    ycenter .655
+    ease 2.0 xcenter decimal 
 
+#Trish enters the scene    
+transform rushed_move_right(decimal):
+    xcenter 1.0
+    ycenter .655
+    easein 2.0 xcenter decimal 
+transform rushed_move_left(decimal):
+    xcenter 0.0
+    ycenter .655
+    easein 2.0 xcenter decimal 
 
+#Fang enters the scene    
+transform insecure_move_right(decimal):
+    xcenter 1.0
+    ycenter .655
+    easeout 2.0 xcenter decimal        
+transform insecure_move_left(decimal):
+    xcenter 0.0
+    ycenter .655
+    easeout 2.0 xcenter decimal          
 
-#renamed original files because Python would not access it elsewise in the audio namespace
-define audio.fang_lockpick_sfx = snootjamRoot+"sounds/lock_sound.mp3"
-define audio.fang_door_opened_sfx = snootjamRoot+"sounds/creaking_door.mp3"
-define audio.exploration_bgm = snootjamRoot+"sounds/exploration_theme.ogg"
-define audio.party_bgm = snootjamRoot+"sounds/nothing_ever_happens.ogg"
-define audio.mystery_bgm = snootjamRoot+"sounds/something_happened.ogg" #this track has some artifacts (idk, seems not intended for my ear)
-define audio.industrial_machine_ambient = snootjamRoot+"sounds/industrial_machine_cycle.ogg"
-define audio.fc_bgm = snootjamRoot+"opener assets/fooly_cooly_creature_feature.ogg"
-define audio.fc_cackle_sfx = snootjamRoot+"opener assets/witch_laugh.mp3"
+#Anon enters the scene   
+transform casual_move_right(decimal):
+    xcenter 1.0
+    ycenter .655
+    ease_cubic 2.0 xcenter decimal    
+transform casual_move_left(decimal):
+    xcenter 0.0
+    ycenter .655
+    ease_cubic 2.0 xcenter decimal   
 
-#Rohan Defines
+#Misc
+transform carBump:
+    linear 0.1 ycenter 0.48
+    linear 0.1 ycenter 0.50
+    pause 2
+    linear 0.1 ycenter 0.48
+    linear 0.1 ycenter 0.50
+    pause 4
+    linear 0.1 ycenter 0.48
+    linear 0.1 ycenter 0.50
+    pause 3.5
+    linear 0.1 ycenter 0.48
+    linear 0.1 ycenter 0.50
+    pause 3
+    repeat
+
 #Characters
 define goon = Character("???", color="FFFFFF")
 define FC = Character("Fooly Cooly", color="72D0EA")
-#BG's
-image basement = Image(snootjamRoot+"images/bg/basement.webp")
-image insidePic1 = Image(snootjamRoot+"images/bg/insidePic1.webp")
-image outside van = Image(snootjamRoot+"images/bg/outside van.webp")
-image stairs = Image(snootjamRoot+"images/bg/stairs.webp")
-#CG's
-image car complete = Image(snootjamRoot+"images/cg/car complete.webp")
-#Sprites
-image reed scream = Image(snootjamRoot+"images/sprite/reed scream.png")
-image reed scream flip = im.Flip(snootjamRoot+"images/sprite/reed scream.png", horizontal=True)
-image goon1 = Image(snootjamRoot+"images/sprite/goon1.png")
-image goon1 flip = im.Flip(snootjamRoot+"images/sprite/goon1.png", horizontal=True)
-image goon2 = Image(snootjamRoot+"images/sprite/goon2.png")
-image goon2 flip = im.Flip(snootjamRoot+"images/sprite/goon2.png", horizontal=True)
-image goon3 = Image(snootjamRoot+"images/sprite/goon3.png")
-image goon3 flip = im.Flip(snootjamRoot+"images/sprite/goon3.png", horizontal=True)
-image keys = Image(snootjamRoot+"images/sprite/keys.png")
 
-#Audio
-define carCrash = snootjamRoot+'audio/car crash.ogg'
-define carDoor = snootjamRoot+'audio/car door.mp3'
-define escape = snootjamRoot+'audio/escape.ogg'
-define doorCreaking = snootjamRoot+'audio/door creaking.mp3'
-define footsteps = snootjamRoot+'audio/footsteps.mp3'
-define insideCarNoise = snootjamRoot+'audio/inside car noise.mp3'
-define keyGet = snootjamRoot+'audio/key get.mp3'
-define lightSwitch = snootjamRoot+'audio/light switch.mp3'
-define lockSound = snootjamRoot+'audio/lock sound.mp3'
-define sneeze = snootjamRoot+'audio/sneeze.mp3'
-define tackle = snootjamRoot+'audio/tackle.mp3'
-define tarpPull = snootjamRoot+'audio/tarp pull.mp3'
-define worried = snootjamRoot+'audio/worried.ogg'
+#Misc
+default abandoned_door_opened = False
+define ANVL = nvl_narrator    

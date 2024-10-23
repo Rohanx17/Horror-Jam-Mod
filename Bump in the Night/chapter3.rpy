@@ -393,7 +393,7 @@ label bitn_Chapter3:
     "Says the goon grappling with Reed," 
     "as the one he attacked picks himself back up and pulls out a knife."
 
-    scene insidePic1
+    scene abandoned_atrium
 
     pause 2
 
@@ -432,7 +432,7 @@ label bitn_Chapter3:
     
     scene black with dissolve
 
-    scene outside van with dissolve
+    scene outsideVan with dissolve
  
 #need to get the volume to lower without restarting it 
     #play music escape volume 0.25
