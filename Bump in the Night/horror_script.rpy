@@ -1438,3 +1438,13 @@ label bitn_fooly_cooly_preintro:
         ycenter 0.5 xcenter 0.5
         zoom 1
     jump bitn_snootjam_storyline_1
+            
+label bitn_menu_label:
+   show grey onlayer overlay: #tried to be fancier here with no reason, lol
+       blend "add" alpha 0.0
+       easein 1.0 alpha 0.90
+       ease 3.0 alpha 0.0
+   
+   $ quick_menu = False    
+   play music bitn_menu_theme fadein 0.5
+   call screen bitn_menu with Dissolve(4.0, time_warp=_warper.easein)
