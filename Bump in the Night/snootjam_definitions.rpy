@@ -84,6 +84,8 @@ image stairs = Image(bitnBgs+"stairs.webp")
 screen bitn_menu:
     
     modal True
+
+    layer "master"
     
     tag menu
     
