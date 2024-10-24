@@ -1132,7 +1132,7 @@
     play sound "audio/effects/cameraShutterClick.ogg"
     show screen anon_camera 
     
-    #play ambient industrial_random_ambient fadein 1.0
+    play ambient industrial_random_ambient fadein 1.0 #:)
     
     "The noise seems to get louder and quieter at random."
     
@@ -1359,8 +1359,7 @@ label bitn_fooly_cooly_preintro:
     stop music fadeout 2.0
     $ quick_menu = False
     play ambient2 static_noise_sfx fadein 2.0
-    scene black
-    show anim_static_fc
+    scene anim_static_fc
     with Dissolve(2)
     pause 3.0
     
@@ -1438,3 +1437,13 @@ label bitn_fooly_cooly_preintro:
         ycenter 0.5 xcenter 0.5
         zoom 1
     jump bitn_snootjam_storyline_1
+            
+label bitn_menu_label:
+   show grey onlayer overlay: #tried to be fancier here with no reason, lol
+       blend "add" alpha 0.0
+       easein 1.0 alpha 0.90
+       ease 3.0 alpha 0.0
+   
+   $ quick_menu = False    
+   play music bitn_menu_theme fadein 0.5
+   call screen bitn_menu with Dissolve(4.0, time_warp=_warper.easein)

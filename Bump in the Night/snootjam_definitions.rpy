@@ -1,7 +1,7 @@
 init python:
     mod_menu_access += [{
         'Name': "Bump in the Night",
-        'Label' : "bitn_fooly_cooly_preintro"
+        'Label' : "bitn_menu_label"
     }]
 
 init:
@@ -79,6 +79,47 @@ image basement = Image(bitnBgs+"basement.webp")
 image stairs = Image(bitnBgs+"stairs.webp")
 
 #Screens
+
+#Main Menu with all the stuff of this
+screen bitn_menu:
+    
+    modal True
+
+    layer "master"
+    
+    tag menu
+    
+    style_prefix "main_menu"
+
+    add gui.main_menu_background
+    
+    $ main_menu_button_img = bitn_menu_button
+    
+    add bitn_menu_bg xysize (0.7, 1.0) xcenter 0.4
+     
+    frame:
+         background bitn_menu_overlay 
+    
+    
+    text _('Bump In The Night') size 70 xcenter 0.83 ycenter 0.3 
+    
+    vbox:
+        spacing 10
+        xpos 1865
+        ypos 800
+        use main_menu_buttons(main_menu_button_img,
+            [
+                [ _("Bump In"), Hide(screen=None,transition=Dissolve(2))],
+                [ _("Bump Out"), Return()]
+            ] )
+    
+    on "hide" action Jump("bitn_fooly_cooly_preintro")
+ 
+define bitn_menu_bg = bitnScreens+"senza_titolo.png" #not 16:9, if it was the whole deal
+define audio.bitn_menu_theme = bitnMusic+"silent_bluffs_menu.ogg"
+define bitn_menu_overlay = im.MatrixColor("gui/overlay/main_menu.png", im.matrix.saturation(0)) 
+define bitn_menu_button = im.MatrixColor("gui/button/menubuttons/template_full_idle.png", im.matrix.saturation(0)) 
+image grey = Solid("#747574") 
 
 #Anon's Camera (do we have it in the original game?)
 image anon_camera_rec_dot:
