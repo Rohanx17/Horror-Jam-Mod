@@ -107,10 +107,12 @@ screen bitn_menu:
         ypos 800
         use main_menu_buttons(main_menu_button_img,
             [
-                [ _("Bump In"), Jump("bitn_fooly_cooly_preintro") ],
+                [ _("Bump In"), Hide(screen=None,transition=Dissolve(2)],
                 [ _("Bump Out"), Return()]
             ] )
-
+    
+    on "hide" action Jump("bitn_fooly_cooly_preintro")
+ 
 define bitn_menu_bg = bitnScreens+"senza_titolo.png" #not 16:9, if it was the whole deal
 define audio.bitn_menu_theme = bitnMusic+"silent_bluffs_menu.ogg"
 define bitn_menu_overlay = im.MatrixColor("gui/overlay/main_menu.png", im.matrix.saturation(0)) 
