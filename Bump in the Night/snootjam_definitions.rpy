@@ -107,7 +107,7 @@ screen bitn_menu:
         ypos 800
         use main_menu_buttons(main_menu_button_img,
             [
-                [ _("Bump In"), Hide(screen=None,transition=Dissolve(2)],
+                [ _("Bump In"), Hide(screen=None,transition=Dissolve(2))],
                 [ _("Bump Out"), Return()]
             ] )
     
