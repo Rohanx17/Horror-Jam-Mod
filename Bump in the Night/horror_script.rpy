@@ -122,7 +122,7 @@
         easeout 0.25 xcenter 0.3
     pause .25
     show trish neutral    
-    F "{cps=0}{b}{size=60}HOW YOU DOING VOLCALDERA!{/b}” "
+    F "{cps=0}{b}{size=60}HOW YOU DOING VOLCALDERA!{/b}"
     
     pause 1.0
     
