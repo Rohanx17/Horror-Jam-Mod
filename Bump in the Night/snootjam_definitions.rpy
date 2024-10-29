@@ -1,9 +1,3 @@
-init python:
-    mod_menu_access += [{
-        'Name': "Bump in the Night",
-        'Label' : "bitn_menu_label"
-    }]
-
 init:
     $ bitnRoot = "mods/Bump in the Night/assets/"
 
