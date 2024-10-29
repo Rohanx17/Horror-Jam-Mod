@@ -26,7 +26,7 @@ label bitn_Chapter3:
     show fang sad at sright
     with Dissolve(2)
 
-    "shining the weak light of her phone against a large metal door."
+    "I round the final turn and spot Fang standing at the bottom,{fast} shining the weak light of her phone against a large metal door."
     "Her expression is stoic but intense, perhaps her nerves finally caught up with her."
 #zoom in effect
     camera:
@@ -164,7 +164,7 @@ label bitn_Chapter3:
       easein_cubic 1  xcenter 0.5 
 
     "We reach the other end of the room." 
-    "There's a large table draped with a tarp covering something huge"    
+    "There's a large table draped with a tarp covering something huge."    
 
     F "This is it, the moment of truth. You'd better not disappoint me."
 
@@ -202,8 +202,7 @@ label bitn_Chapter3:
         linear 1.5 xcenter 0.7     
 
     "Reed calls over from a pile of crates by the wall."
-    "He's ripped open the top of one," 
-    "the inside sits stacked wall to wall with cellophane bricks."
+    "He's ripped open the top of one,{w} the inside sits stacked wall to wall with cellophane bricks." 
 
 #reed dips down slightly then back up
     show reed:
@@ -219,7 +218,7 @@ label bitn_Chapter3:
 
     show reed shocked with dissolve
 
-    Re "This is coke"
+    Re "This is coke!"
 
     show trish surprised with dissolve
 
@@ -319,7 +318,7 @@ label bitn_Chapter3:
     show goon1:
       easein 1 xcenter 0.85
 
-    show trish: 
+    show trish:
       easein 0.5 xcenter 0.90
     "After a moment, one ducks down and spots her." 
  
@@ -327,14 +326,16 @@ label bitn_Chapter3:
       easein_cubic 1 xcenter 0.5
 
     show trish:
-      easein_cubic 1 xcenter 0.6
+      easein_cubic 1 xcenter 0.6 
     "She yelps as he pulls her out by the leg,"
 #raise goon back to normal height, flip trish upside down and make her feet even with his head
     show trish: 
+        xcenter 0.6 ycenter 0.75 
         linear 0.5 rotate 180 
     pause 0.5
 #rapidly flip trish left and right until reeds tackle
     show trish angry:
+        xcenter 0.6 ycenter 0.75 rotate -180 yzoom 1.0
         linear 0.25 xzoom -1 
         linear 0.25 xzoom 1 
         repeat
