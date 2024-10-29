@@ -23,8 +23,9 @@ label bitn_Chapter3:
     stop music
 
     "I round the final turn and spot Fang standing at the bottom,"
-    show fang sad at sright
-    with Dissolve(2)
+    show fang sad at sright:
+    alpha 0.0
+    ease 2.0 alpha 1.0
 
     "I round the final turn and spot Fang standing at the bottom,{fast} shining the weak light of her phone against a large metal door."
     "Her expression is stoic but intense, perhaps her nerves finally caught up with her."
