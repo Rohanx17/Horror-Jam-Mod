@@ -650,6 +650,7 @@ label bitn_interrogation:
     
     Re "Nobody man, we don't know anything about this."
     
+    pause 1.0
     show short goon neutral
     
     G1 "Well that's very unfortunate to hear..."
@@ -1076,7 +1077,7 @@ label bitn_interrogation:
     
     show reed shocked:
         ycenter 0.655
-        1.0
+        0.5
         parallel:
          .5
          ease 0.2 ycenter 0.68
@@ -1476,7 +1477,7 @@ label bitn_interrogation:
     
     show short goon shocked
     
-    G1 "I think they might be with the force, but the first one was a dead end so we're not-, I'm sorry it's just-,{fast}wait what?!"
+    G1 "I think they might be with the force, but the first one was a dead end so we're not-, I'm sorry it's just-,{fast} wait what?!"
     
     G1 "That's not necessary I've-,{nw}" 
     
