@@ -30,6 +30,22 @@ image goon2 flip = im.Flip(bitnSprites+"goons/goon2.png", horizontal=True)
 image goon3 = Image(bitnSprites+"goons/goon3.png")
 image goon3 flip = im.Flip(bitnSprites+"goons/goon3.png", horizontal=True)
 
+define base = Character (ctc="ctc_end_marker", ctc_pause="ctc_mid_marker", ctc_timedpause=Null(), ctc_position="nestled") #will not work if I don't copypaste it 
+define G1 = Character(_('[G1_Name]'), base, color="#5e2f1f", who_outlines=[(gui.name_text_thickness, '#401c0a')])
+define G2 = Character(_('[G2_Name]'), base, color="#75382b", who_outlines=[(gui.name_text_thickness, '#40130a')])
+
+default G1_Name = 'Short Goon'
+default G2_Name = 'Tall Goon'
+
+image short goon neutral  = Image(bitnSprites+"goons/short goon neutral.png")
+image short goon neutral ec = Image(bitnSprites+"goons/short goon neutral eyes closed.png")
+image short goon angry = Image(bitnSprites+"goons/short goon angry.png")
+image short goon shocked = Image(bitnSprites+"goons/short goon shocked.png")
+image short goon grin  = Image(bitnSprites+"goons/short goon grin.png")
+
+image tall goon neutral  = Image(bitnSprites+"goons/tall goon neutral.png")
+image tall goon shocked  = Image(bitnSprites+"goons/tall goon shocked.png")
+
 #CGs
 
 #Opening Car
@@ -71,6 +87,7 @@ image abandoned_door = ConditionSwitch("abandoned_door_opened == False", bitnBgs
 image abandoned_graffiti_2 = bitnBgs+"insidePic3.webp" #for the easiest bluring workaround
 image basement = Image(bitnBgs+"basement.webp")
 image stairs = Image(bitnBgs+"stairs.webp")
+image torture_room = bitnBgs+"torture room.png"
 
 #Screens
 
@@ -272,6 +289,11 @@ define audio.mystery_bgm = bitnMusic+"something_happened.ogg" #this track has so
 define audio.fc_bgm = bitnMusic+"fooly_cooly_creature_feature.ogg"
 define escape = bitnMusic+"escape.ogg"
 define worried = bitnMusic+"worried.ogg"
+define torture_p1 = bitnMusic+"PHASE 1.ogg"
+define torture_p2 = bitnMusic+"PHASE 2.ogg"
+define torture_p3 = bitnMusic+"PHASE 3.ogg"
+define torture_p4 = bitnMusic+"PHASE 4.ogg"
+
 
 #Effects
 define audio.doorOpening = bitnEffects+"door opening.mp3"
@@ -302,6 +324,35 @@ define lockSound = bitnEffects+"lock sound.mp3"
 define sneeze = bitnEffects+"sneeze.mp3"
 define tackle = bitnEffects+"tackle.mp3"
 define tarpPull = bitnEffects+"tarp pull.mp3"
+define tableDrop = bitnEffects+"table drop.mp3"
+define tableKnife = bitnEffects+"knife table stab.ogg"
+define af_wtf = bitnEffects+"surprise.wav" 
+define reed_spit = bitnEffects+"spit.mp3" 
+define goon_fingersnap = bitnEffects+"finger snap.mp3"
+define goon_ripout = bitnEffects+"rip out.mp3"
+define goon_fingerchop = bitnEffects+"finger chop instant.ogg"
+define goon_fingerchop_delay = bitnEffects+"finger chop delayed.ogg"
+define goon_phone = bitnEffects+"phone hang up sound.m4a"
+define ouch = bitnEffects+"reed_scream_shortest.ogg"
+define short_scream = bitnEffects+"reed_scream_short.ogg"
+define long_scream = bitnEffects+"reed_scream_long.ogg"
+define end_groan = bitnEffects+"reed_dead_inside.ogg"
+define fang_bite = bitnEffects+"fang_bite.ogg"
+define chair_pull = bitnEffects+"chair_pulling.ogg"
+define chair_creak = bitnEffects+"chair_creaking.ogg"
+define card_gather = bitnEffects+"cards_collecting.ogg"
+define goon_smoke = bitnEffects+"exhale.ogg"
+
+#DBD sounds :)
+define trish_cry = bitnEffects+"trish_crying.ogg"
+define ouch = bitnEffects+"reed_scream_shortest.ogg"
+define short_scream = bitnEffects+"reed_scream_short.ogg"
+define long_scream = bitnEffects+"reed_scream_long.ogg"
+define end_groan = bitnEffects+"reed_dead_inside.ogg"
+define fang_resist = bitnEffects+"fang_resist.ogg"
+
+
+
 
 #Ambience
 define audio.outsideAmbience = bitnAmbience+"ambient noises for outside.mp3"
@@ -309,6 +360,10 @@ define audio.industrial_random_ambient = bitnAmbience+"industrial_machine_cycle_
 define audio.fc_electricity_ambient = bitnAmbience+"electricity.ogg"
 define audio.fc_thunder_ambient = bitnAmbience+"thunder.mp3"
 define audio.industrial_machine_ambient = bitnAmbience+"industrial_machine_cycle.ogg"
+define knife_sharpening = bitnAmbience+"knife sharpening.mp3"
+define playing_cards = bitnAmbience+"playing_cards.ogg"
+define lamp_buzz = bitnAmbience+"fluorescent light buzz.mp3"
+
 
 #Transforms
 
@@ -375,3 +430,38 @@ define FC = Character("Fooly Cooly", color="72D0EA")
 #Misc
 default abandoned_door_opened = False
 define ANVL = nvl_narrator    
+default trish_extended_dialogue = False
+
+image eye:
+    fps 120.0
+    bitnScreens+"/anonsCamera/rec.webp"
+    xcenter 0.5
+    ycenter 0.5
+    additive 0.5
+    matrixcolor SaturationMatrix(0.0) 
+    matrixcolor BrightnessMatrix(5.0)
+    zoom 20.0
+    yzoom 0.0
+    .5
+    bitnScreens+"/anonsCamera/rec.webp"
+    yzoom 0.25
+    .25
+    bitnScreens+"/anonsCamera/rec.webp"
+    yzoom 0.50
+    .25
+    bitnScreens+"/anonsCamera/rec.webp"
+    yzoom 0.75
+    .25
+    bitnScreens+"/anonsCamera/rec.webp"
+    yzoom 1.0
+    .25
+    bitnScreens+"/anonsCamera/rec.webp"
+
+
+layeredimage tunnel_vision:
+    always:
+        "black"
+    
+    attribute base default:
+        "eye"   
+
