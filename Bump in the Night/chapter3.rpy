@@ -537,7 +537,9 @@ label bitn_Chapter3:
 
     pause 9
 
-#scene ends here thismis an extra bit for the jam version only
+    jump bitn_interrogation
+    
+    #scene ends here thismis an extra bit for the jam version only
 
     FC "Unfortunately that's all the time we have for today folks!"
     FC "What?"
@@ -545,5 +547,995 @@ label bitn_Chapter3:
     FC "Then you'll have to check out the full release coming out this halloween!"
     FC "Hopefully."
     "Happy holidays Snoot Club!"
+    
+    return
+
+label bitn_interrogation:
+    play ambient lamp_buzz fadein 3.0 volume 1.0
+    scene torture_room
+    show tunnel_vision onlayer screens:
+        blend "multiply" alpha 1.0 blur 50.0
+        5.0
+        linear 5.0 alpha 0.0 
+        
+        
+    show short goon neutral:
+        zoom 0.5 xcenter 0.65 ycenter 0.6 xzoom -1.0 
+        matrixcolor TintMatrix ('#364259')* ContrastMatrix(0.0)  
+        
+    show tall goon neutral:
+        zoom 0.5 xcenter 0.325 ycenter 0.5
+        matrixcolor TintMatrix ('#364259')* ContrastMatrix(0.0)  
+    
+    camera:
+        blur 10.0
+        linear 10.0 blur 0.0
+    
+    with Dissolve(3)
+    
+    pause 2.0
+    play ambient1 playing_cards fadein 10.0
+    "Slowly I regain consciousness, {w=0.10}my body sore and immobile as my eyes adjust."
+    
+    "I'm tied to a chair in a modest concrete room."
+    
+    "At the other end is a small table, {w=0.10}where two bored-looking goons sit playing cards under the dingy light of a flickering bulb."      
+    
+    A "Fang?"
+   
+    F "A-Anon?"    
+    
+    F "Thank God you're ok."
+    
+    "I see Fang on my left and we exchange worried looks. {w}The others are here too, looks like Reed’s been roughed up pretty bad."
+    
+    A "Where are we?"
+    
+    T "We don't know."
+    
+    "The pair take notice of our conversation."
+    
+    show short goon neutral:
+        matrixcolor TintMatrix ('#364259')* ContrastMatrix(0.0)  
+        easeout_quint 2.0 matrixcolor TintMatrix ('#f7f7f7')* ContrastMatrix(1.0)  
+        
+    G1 "Hey, looks like our guests are finally awake. {w}Let's get this show started."
+    
+    show tall goon neutral:
+        matrixcolor TintMatrix ('#364259')* ContrastMatrix(0.0)
+        easein_quint 2.0 matrixcolor TintMatrix ('#f7f7f7')* ContrastMatrix(1.0)  
+    
+    G2 "Just when you're about to lose, how convenient."
+    
+    stop ambient1
+    "He waves his hand dismissively and sighs."
+    
+    G1 "Keep the pot for all I care, just go get my tools." 
+    
+    G1 "We have a job to do."
+    
+    play sound card_gather
+    
+    "The taller one rolls his eyes before scooping the change off the table and into his coat pocket,{nw}" 
+    
+    show tall goon neutral:
+        xcenter 0.325 
+        easein_quint 3.0 xcenter 1.2
+    
+    "The taller one rolls his eyes before scooping the change off the table and into his coat pocket,{fast} then shuffles off through one of the doors." 
+    
+    hide tall goon
+    
+    show short goon neutral:
+        zoom 0.5 xcenter 0.65 ycenter 0.6 matrixcolor TintMatrix ('#f7f7f7')* ContrastMatrix(1.0)  
+        easeout_quint 1.5 xcenter 0.5 ycenter 0.655 zoom 1.0 
+    
+    "The short one gets up to face us,"
+    
+    show short goon grin:
+        xzoom -1.0 xcenter 0.5 ycenter 0.655 zoom 1.0
+    
+    "The short one gets up to face us,{fast} his tired expression shifts into a beaming grin as he locks eyes with ours."
+    
+    G1 "Welcome to our humble little abode."
+    
+    G1 "My name is Paulie and that was my associate Bruce, {w=0.10}and we'll be your hosts for tonight's entertainment."
+    
+    $ G1_Name = 'Paulie'
+    $ G2_Name = 'Bruce'
+    
+    F "Where the hell are we?"
+    
+    G1 "Sorry but we'll be asking the questions here. Starting with who you all are, and who sent you."
+    
+    Re "Nobody man, we don't know anything about this."
+    
+    show short goon neutral
+    
+    G1 "Well that's very unfortunate to hear..."
+    
+    "He picks up our video camera off the table."
+    
+    G1 "Because {i}someone{/i} thought it was a real good idea to break into our hidden depot and get every last detail on tape."
+    
+    G1 "Y'all were real desperate to make sure it got out too. Now the boss wants to know who out there is stupid enough to fuck with him."
+    
+    show short goon grin
+    
+    G1 "And we intend to find out by any means necessary."
+    
+    pause .5
+    
+    hide tunnel_vision onlayer screens
+    camera:
+      blur 0        
+    
+    
+    show short goon neutral with dissolve
+    
+    A "We're telling the truth! {w=0.10}We're just some teens who wandered in here for fun, we don't work for anybody."
+    
+    show short goon grin
+    
+    G1 "Come on kid you can do better than that. {w}The place is locked and built like a bomb shelter, {w=0.10}no one just stumbles in there by accident."
+    
+    show tall goon neutral behind short:
+        xzoom -1.0 ycenter 0.655 xcenter 1.2 zoom 0.5 
+        easein_quint 2.0 xcenter 0.65
+    
+    show short goon grin:
+        xcenter 0.5
+        pause 1.0
+        easeout_quint 1.0 xcenter 0.3 ycenter 0.655 
+    
+    pause 1.0
+    play sound tableDrop
+    
+    "The taller goon comes back and drops a large leather wrapping on the table."
+    
+    "It looks kinda like that thing they hold surgical equipment in."
+
+    G1 "Since none of you feel like doing this the easy way, we'll just have to do it our way."
+
+    "He unrolls it and we all quietly gasp. {w}Knives, {w=0.10}scissors, {w=0.10}a ballpoint hammer, {w=0.10}and a collection of other tools are laid out in horrific fashion."     
+    
+    G1 "Alright Pink, how about we start with you?"
+    
+    show tall goon neutral:
+        xcenter 0.65
+        easein_quint 3.0 xcenter -0.2
+    
+    camera:
+       zoom 1.0 ycenter 0.5
+       2.0
+       linear 0.5 zoom 1.5    
+
+    
+    show short goon grin:
+        xzoom -1.0 xcenter 0.3 ycenter 0.655 zoom 1.0
+        2.0
+        easeout_quint 1.0 xcenter 0.7 zoom 0.7  
+    
+    pause 2.0
+    
+    play sound chair_pull
+    
+    show tall goon neutral:
+        xcenter -0.5 ycenter 0.655 zoom 0.65 xzoom 1.0
+        1.5
+        easein_quint 1.0 xcenter 0.3
+     
+    show reed neutral:
+        ycenter 0.655 xcenter -0.2 zoom 0.7
+        1.0
+        ease 1.0 xcenter 0.4
+    
+    "The taller one grabs Reed's chair and pulls him over to the table."
+        
+    play sound reed_lighter_sfx
+    
+    show reed neutral:
+        xcenter 0.4 ycenter 0.655 zoom 0.7
+    
+    show tall goon neutral:
+        xcenter 0.3 ycenter 0.655 zoom 0.65 xzoom 1.0
+        
+        
+    show short goon grin:
+        xzoom -1.0 xcenter 0.7 zoom 0.7 ycenter 0.655      
+    
+    "The short one pulls out a pack of cigs from his coat and lights one up, {nw}"
+    
+    show tall goon neutral:
+        xzoom -1.0 xcenter 0.3 xoffset -100
+        .5
+        easein_quint 1.5 xcenter 0.2
+        easein_quint 0.5 xcenter 0.3
+        xzoom 1.0 xoffset 0
+        
+    show short goon grin:
+        xcenter 0.7 zoom 0.7 xzoom 1.0
+        easeout_quint 0.5 xcenter 0.8
+        1.0
+        easeout_quint 0.5 xcenter 0.7
+        xzoom -1.0
+    
+    play sound [ "<silence 1.25>", reed_lighter_sfx ] 
+    
+    "The short one pulls out a pack of cigs from his coat and lights one up, {fast}then hands it out to his partner who does the same."
+    
+    G1 "So me and you are going to play a little game see? {w}I'm gonna ask you a question, {w=0.10}if you tell me something useful, maybe you and your friends will get to wake up tomorrow."
+    
+    "He picks up a knife, artfully spinning it through his fingers."
+    
+    G1 "Try to bullshit me..."
+    
+    play sound tableKnife
+    
+    "He catches the knife and slams the blade into the table."
+    
+    G1 "Let's just say you ain't gonna like the prize we have in store."
+    
+    show reed sad with dissolve
+    stop ambient fadeout 0.5
+    play music torture_p1 fadein 0.5
+    
+    "We all gulp, a look of dread creeps across Reed's face."
+    
+    G1 "Now let's begin."
+    
+    "He looks over at us."
+    
+    G1 "And of course, {w=0.10}if you don't like what you see, the audience is always free to answer for him."
+    
+    show short goon neutral with dissolve
+    
+    "His smile evaporates as he turns back to Reed and stares him down."
+    
+    G1 "Now question number one: {w=0.25} Who exactly do you work for?"
+    
+    
+    menu:
+        
+        "Plead ignorance":
+         Re "Please we don't know anything, let us{nw} g-AHHHH!" 
+         
+         show reed shocked:
+            ycenter 0.655
+            ease 0.25 ycenter 0.68
+            ease 0.5  ycenter 0.63 
+            ease 0.5  ycenter 0.68 
+            ease 0.25 ycenter 0.63   
+            ease 0.25 ycenter 0.655
+        
+         play sound "audio/effects/sizzle.ogg"
+         queue sound ouch         
+         
+         Re "Please we don't know anything, let us{fast} g-AHHHH!" 
+         
+         show reed sad
+         
+         pass
+         
+        "Prove innocence":
+         "Reed looks ready to puke as his nerves run overtime, {w=0.10}thinking of what he could possibly say to placate the villain."
+         
+         Re "We're telling you the truth I swear! We don't work for anybody!" 
+         
+         show reed neutral
+         
+         "His face lights up."
+         
+         Re "Check the cam footage you'll see!"
+         
+         show short goon grin
+         
+         G1 "Oh don't you worry we've given your little home movie a good look over."
+         
+         G1 "Y'all seem to be searching real hard for something {w=0.10}until suddenly, you're showing off our product like you're the home shopping network." 
+         
+         G1 "Care to explain?"
+         
+         show reed unimpressed
+         
+         Re "...uh, well, I think she was looking for a ghost or someth-{nw}"
+         
+         
+         show reed shocked:
+            ycenter 0.655
+            ease 0.25 ycenter 0.68
+            ease 0.5  ycenter 0.63 
+            ease 0.5  ycenter 0.68 
+            ease 0.25 ycenter 0.63   
+            ease 0.25 ycenter 0.655
+         
+         play sound "audio/effects/sizzle.ogg"
+         queue sound ouch
+         
+         Re "...uh, well, I think she was looking for a ghost or someth-{fast}AHHHH!"
+         
+         show reed sad
+         
+         show short goon neutral
+         
+         pass 
+            
+        "Antagonize":
+            
+         show reed angry with dissolve
+
+         Re "Are you deaf? We don't work for anyone! How many times do-{nw}" 
+         
+         
+         show reed shocked:
+            ycenter 0.655
+            ease 0.25 ycenter 0.68
+            ease 0.5  ycenter 0.63 
+            ease 0.5  ycenter 0.68 
+            ease 0.25 ycenter 0.63   
+            ease 0.25 ycenter 0.655
+         
+         
+         play sound "audio/effects/sizzle.ogg"
+         queue sound ouch
+        
+        
+         Re "Are you deaf? We don't work for anyone! How many times do-{fast}AHHHH!"         
+            
+         show reed sad
+         
+         
+         pass            
+    
+    play music torture_p2 fadein 0.5
+    
+    "Reed yelps as the goon standing over him, {w=0.10}putting out his cig on the top of his maw."
+    
+    G1 "Strike one."
+    
+    play sound goon_smoke volume 0.5
+    
+    "The short one says, leaning back in his chair and releasing a cloud of smoke."
+
+    G1 "I take it that cleared your mind a little?" 
+    
+    G1 "We're not screwing around kid, {w=0.10}you're going to give us what we want, one way or the other."
+    
+    G1 "So I suggest you cooperate before I have to take more{cps=10}... drastic measures."
+
+    show tall goon neutral:
+        xcenter 0.3
+        easein_quint 1.0 xcenter 0.35
+
+    "He looks over to his companion who nods." 
+    
+    "Without a moment's hesitation, he grabs the tuft at the end of Reed's tail."
+    
+    T "Get your hands off him!"
+    
+    T "Fangs dad is a cop {w=0.10}and you lay a finger on us he'll make you wish you were never born!"
+        
+    F "Trish, shut up!"
+    
+    show short goon grin
+    
+    G1 "Oh he is? {w}Well now we're getting somewhere." 
+    
+    G1 "Had a feeling you might be with the cops; {w}no way the other families would muscle in on our turf so openly."
+    
+    
+    show short goon neutral:
+        xcenter 0.7
+        easeout_quint 1.0 xcenter 0.6
+    
+    "He leans back into Reed's face."
+    
+    G1 "Question two: {w}So are you kids a bunch of fresh recruits?" 
+    
+    G1 "If so, {w=0.10}were you out here looking for evidence?" 
+    
+    G1 "What do your superiors already know about our operations?"
+    
+    
+    menu:
+        
+        "Deny everything":
+            Re "We don't work for the cops or anyone man I swear!" 
+            
+            Re "Were just a bunch of dumb teens in way over our heads! {w=0.10}You have to believe me!"
+            
+            "The goon sighs and shakes his head."
+            
+            G1 "Strike two."
+            
+            pass
+            
+        "Beg for life":
+            "Reed's face is completely enveloped in fear, I doubt ours are any better."
+            
+            Re "Please, I promise we'll do anything you want! {w}You can destroy the tape and we won't tell anybody what we saw tonight I swear!" 
+            
+            Re "Whatever you want man just let us go..."
+            
+            "The goon sighs and shakes his head." 
+            
+            G1 "Strike two."
+
+            pass
+            
+        "Strike a deal":
+
+            show reed neutral
+
+            "Suddenly Reed's face relaxes a little, {w=0.10}like he's found a way to bail us out of this."
+
+            Re "I got nothing man we've told you all everything." 
+            
+            Re "Since we know too much already, {w=0.10}why don't we join up? {w=0.10}We're not cops and we'd be happy to prove it."            
+            
+            $ renpy.music.set_volume(0.2,delay=0.5,channel='music')
+            
+            pause .5
+            
+            play sound af_wtf
+            
+            AnonAndFang "{size=50}{b}WHAT!?"
+            
+            T "..."
+            
+            $ trish_extended_dialogue = True
+            
+            show short goon grin with dissolve
+            
+            "The goon slaps the table and laughs, {w=0.10}then looks at his friend while pointing at Reed."
+            
+            G1 "You know I'm starting to like this one."
+            
+            "He turns back to Reed."
+            
+            G1 "Ya got balls kid I'll give you that."
+            
+            G1 "Truth be told we're always shorthanded around here." 
+            
+            G1 "Unfortunately for you, orders are orders."
+            
+            $ renpy.music.set_volume(1.0,delay=0.5,channel='music')
+            
+            show short goon neutral with dissolve
+            
+            G1 "More importantly, that's NOT what I asked you, {w=0.25}strike two."
+            
+            
+            
+            pass            
+    
+        "Antagonize":
+            
+            play sound reed_spit
+            
+            show reed angry:
+                xcenter 0.4
+                ease 0.25 xcenter 0.35
+                ease 0.5 xcenter 0.4
+                
+            
+            show short goon neutral:
+                xcenter 0.6
+                pause .5
+                easeout_quint 0.25 xcenter 0.65
+            
+            "Without hesitation Reed hawks a loogie into the goon's face."
+                
+            
+            G1 "AAUGH YOU LITTLE SHIT!"
+            
+            show short goon angry:
+                xcenter 0.65
+                easeout_quint 0.5 xcenter 0.7
+            
+            "He reels back to wipe it off,"
+            
+            play sound "audio/effects/slapstickPunch.ogg"
+            
+            show short goon angry:
+               xcenter 0.7
+               easeout_quint 0.25 xcenter 0.5
+               easeout_quint 0.25 xcenter 0.6
+            
+            show reed shocked:
+               xcenter 0.4
+               .25
+               ease 0.25 xcenter 0.4 rotate -25
+               ease 1.0 xcenter 0.4 rotate 0              
+            
+            
+            
+            "He reels back to wipe it off,{fast} and then slaps reeds maw so hard it almost knocks him over."
+            
+             
+            G1 "You think this is funny!? I'll show you something real funny!" 
+             
+             
+    
+    show short goon neutral with dissolve
+    
+    play sound goon_fingersnap 
+    
+    play music torture_p3 fadein 1.0
+    
+    "He snaps his fingers."
+    
+    pause .25
+    
+    
+    "The taller one takes a handful of the feathers, {w=0.10}and with a quick jerk, {w=0.25}{nw}"
+    
+    play sound goon_ripout    
+    queue sound short_scream
+    
+    
+    show reed shocked:
+        ycenter 0.655
+        1.0
+        parallel:
+         .5
+         ease 0.2 ycenter 0.68
+         ease 0.4 ycenter 0.63
+         ease 0.4 ycenter 0.68
+         ease 0.4 ycenter 0.63
+         ease 0.2 ycenter 0.655
+         
+        
+        
+        parallel:
+         matrixcolor TintMatrix('#f7f7f7')
+         1.0
+         matrixcolor TintMatrix('#e0b6b6')
+         1.0
+         repeat       
+    
+    "The taller one takes a handful of the feathers, {w=0.10}and with a quick jerk, {fast}rips them out at the root."
+    
+    "Reed screams in agony, {w=0.10}staring at the ceiling as he squirms against his restraints." 
+    
+    "Blood started to drip from the missing section of the pattern." 
+    
+    "Fang stares agape in abject horror, Trish starts to cry."
+    
+    show reed sad
+    
+    G1 "Ready to talk yet?"
+
+    "Reed is breathing heavily as he wrestles with the pain." 
+
+    G1 "Let me tell you what I think."
+    
+    show short goon neutral:
+        easeout_quint 1.5 xcenter 0.7
+        
+        
+    play sound chair_creak
+    
+    "The goon lays back in his chair again."     
+
+    G1 "My guess is you're a bunch of rookies who got tipped off and are operating off the books."
+    
+    show short goon grin 
+    
+    G1 "Hell, there might not even be another living soul who knows where you went tonight."
+    
+    G1 "There's no one coming for ya, and you'll be dog food by the time people start asking questions." 
+    
+    show short goon neutral
+    
+    G1 "We've made plenty of young fools disappear, {w=0.10}don't think we can't do the same with you."
+    
+    show short goon neutral:
+        xcenter 0.7
+        easeout_quint 1.0 xcenter 0.6
+        
+    "The goon sits back up and picks out a long, thick butcher knife from his cavalcade of carnage and eyes it longingly. "
+    
+    G1 "So taking that into account, {w=0.10}I hope you have the prudence to choose your next words very carefully {w=0.10}because, as I'm sure you are now aware, I don't give second chances."
+    
+    "The taller one grabs Reed's arm and holds it out in place." 
+    
+    show short goon neutral with dissolve
+    
+    play ambient knife_sharpening
+    
+    "The other takes the knife and dances it across Reed’s fingers. "
+    
+    G1 "A single slip, and five becomes four."
+    
+    G1 "So I'll ask you one more time: {w}Who are you kids?"
+    
+    menu: 
+      "Please...":
+        "Thick streams of tears streak across a face full of despair. "
+        
+        Re "{cps=10}Please...{w=0.25}{cps=50}we don't know anything, you have to believe me..."
+        
+        "The goon stares into him unflinchingly."
+        
+        G1 "Is that your final answer?"
+        
+        show reed considering
+        
+        Re "{cps=10}{b}...Please..."
+        
+        
+        pass
+          
+      "Try to save friends":
+        pause 1.0
+        show reed neutral: 
+          parallel: 
+           xcenter 0.4
+           xzoom 1.0
+           pause .5
+           xzoom -1.0 xoffset 200
+           pause .5
+           xzoom 1.0 xoffset 0
+          
+          parallel:
+           matrixcolor TintMatrix('#f7f7f7')
+           1.0
+           matrixcolor TintMatrix('#e0b6b6')
+           1.0
+           repeat  
+                          
+        
+        "Reed looks over to us for a moment before facing the man again."
+
+        "Thick streams of tears streak across a face full of despair."
+
+        Re "“{cps=10}...{w=0.25}{cps=50}Do whatever you want with me, {w=0.10}but please don't hurt my friends."
+        
+        Re "This is all my fault."
+        
+        Re "I'll do or say whatever you want, but {cps=10}please...{w=0.25}{cps=50} just let my friends go..."        
+            
+        "The goon stares into him unflinchingly."
+        
+        G1 "Is that your {w=0.10}final answer?"
+        
+        Re "{cps=10}{b}...Please..."
+        
+        
+        pass
+      
+      
+      "Antagonize":
+        
+        show reed unimpressed
+        
+        "Reed laughs quietly to himself."
+        
+        Re "Why answer if you're not gonna listen?"
+        
+        Re "You get off on this don't you?" 
+        
+        Re "You sick fuck..."
+        
+        "The goon stares into him unflinchingly."
+
+        G1 "Is that your {w=0.10}final answer?"
+        
+        Re "{cps=10}{b}...Bite me..."
+        
+        pass  
+    
+    stop music fadeout 2.0
+    
+    show black:
+        alpha 0.0
+        linear 2.0 alpha 1.0
+    
+    
+    "The goon closes his eyes and takes a deep breath."
+    
+    stop ambient fadeout 0.5
+    
+    pause 2.0
+    
+    G1 "Strike three."
+    
+    play sound goon_fingerchop_delay
+    queue sound long_scream
+    
+    pause 2.0
+    
+    play music torture_p4 fadein 1.0
+    
+    
+    show reed shocked:
+        ycenter 0.655
+        parallel:
+         alpha 0.9
+         ycenter 0.655
+         ease 0.15 ycenter 0.63
+         ease 0.3 ycenter 0.68
+         ease 0.3 ycenter 0.63
+         ease 0.3 ycenter 0.68
+         ease 0.3 ycenter 0.63
+         ease 0.3 ycenter 0.68
+         ease 0.5 ycenter 0.63
+         ease 0.5 ycenter 0.68
+         ease 0.5 ycenter 0.63
+         ease 0.5 ycenter 0.68
+         ease 0.8 ycenter 0.63
+         ease 0.8 ycenter 0.68
+         ease 0.8 ycenter 0.63
+         ease 0.8 ycenter 0.68
+         ease 0.4 ycenter 0.655
+       
+        parallel:
+         matrixcolor TintMatrix('#e0b6b6')
+         .5
+         matrixcolor TintMatrix('#f7f7f7')
+         .5
+         repeat         
+    
+    show black:
+        alpha 1.0
+        linear 2.0 alpha 0.0
+    
+    "I heard Reed utter a blood curdling scream loud enough to wake the dead."
+    
+    "As soon as the finger hits the table, {w=0.10}the taller goon pulls out a roll of gauze and wraps up the stub to stem the bleeding."
+    
+    "The girls let out an involuntary shriek."
+    
+    T "What the fuck is wrong with you!?"
+    
+    show short goon angry
+    
+    G1 "Pipe down, or I'll stuff it down your throat!"
+    
+    "That quickly shut them up, {w=0.10}and soon only their muffled sniffling could be heard."
+    
+    show short goon neutral
+    
+    G1 "One down nine to go, {w}ya ready to talk now?"
+    
+    menu:
+      "...":
+         pass 
+      "...":
+         pass
+      "...":
+         pass
+    
+    
+    show reed sad
+    
+    pause 1.0
+    
+    "Reed holds his head held low, as he tries to cope with the pain as best he can."     
+         
+    Re "...don't know anything...I swear..."      
+    
+    show short goon angry with dissolve
+    
+    "The goon merely rolls his eyes with a growing look of frustration." 
+    
+    G1 "Loyal to the end, eh?"
+    
+    G1 "Fine then, we can do this all night."
+    
+    show short goon angry:
+        xcenter 0.6
+        easeout_quint 0.5 xcenter 0.5
+        easeout_quint 0.5 xcenter 0.6
+    
+    pause .5
+    
+    play sound goon_fingerchop
+    
+    show black:
+        linear .5 alpha 1.0
+        linear 1.5 alpha 0.0
+    
+    "{b}THWACK{nw}"
+   
+    
+    show reed shocked:
+        ycenter 0.655 alpha 0.85
+        parallel:
+         ease 0.25 ycenter 0.68
+         ease 0.5 ycenter 0.63
+         ease 0.5 ycenter 0.68
+         ease 0.8 ycenter 0.63
+         ease 0.8 ycenter 0.68
+         ease 0.8 ycenter 0.63
+         ease 0.8 ycenter 0.68
+         ease 0.4 ycenter 0.655
+        
+        parallel:
+         matrixcolor TintMatrix('#e0b6b6')
+         0.25
+         matrixcolor TintMatrix('#f7f7f7')
+         0.25
+         repeat 
+    
+    "Another finger drops to the table, {w=0.10}Reed's body spasms like a beheaded chicken, but there's no verbal response. "
+    
+    "The girls have completely broken down, {w=0.10}pleading on deaf ears for the safety of their friend." 
+    
+    "I sit there paralyzed in shock, {w=0.10}barely able to process what's going on around me, it feels like I'm in a dream."
+    
+    show reed sad
+    
+    "Trapped in a nightmare I know I'll never wake up from."
+    
+    G1 "We can stop this at any time you know, {w}all you have to do is say the word."
+    
+    Re "..."
+    
+    show short goon neutral
+    
+    G1 "{cps=10}...{cps=50}Hey pal, you still in there?"
+    
+    "Reed just sits there with a vacant expression, {w=0.10}the light extinguished from his eyes." 
+    
+    play sound end_groan
+    
+    "His feeble breath the only sign he was still living."
+    
+    show tall goon neutral:
+        xcenter 0.35
+        easein_quint 3.0 xcenter 0.4
+    
+    G2 "If this ain't exciting enough for you anymore, I can go get the drill-"
+    
+    "The shorter one waves his hand dismissively."
+    
+    G1 "Eh, don't bother, {w=0.10}I've been in the business long enough to know this one’s a lost cause."
+    
+    show tall goon neutral:
+        xcenter 0.4
+        easein_quint 1.0 xcenter 0.45       
+    
+    show reed sad:
+        alpha 0.85
+        ease 2.0 alpha 0.0
+    
+    show short goon grin with dissolve
+    
+    G1 "I think it's time we picked a new contestant."
+    
+    show short goon grin:
+        zoom 0.7
+        easeout_quint 1.0 zoom 1.0
+    
+    "He saunters over, leaning in to inspect us like cattle."
+    
+    "As he turns to Fang she quickly leans her head in {nw}" 
+    
+    play sound fang_bite volume 2.0
+    
+    show short goon neutral:
+        zoom 1.0
+        easeout_quint 0.25 zoom 0.9
+        easeout_quint 0.25 zoom 1.0
+    
+    
+    "As he turns to Fang she quickly leans her head in {fast}and snaps at him like a shark, {w=0.10}her face coated in pure hatred."
+    
+    "He pulls away just in time to avoid needing a skingraft."
+    
+    G1 "Whoa there, looks like there's still some fight left in this one!"
+    
+    show short goon grin 
+    
+    G1 "I think, you'll do nicely."
+    
+    pause .5
+    
+    A "Please god no! Take me, not her!"
+    
+    G1 "If you don't want her to get hurt, you're free to cooperate anytime!"
+    
+    show short goon neutral:
+        zoom 1.0
+        easeout_quint 1.0 zoom 0.7
+    
+    play sound fang_resist volume 1.5
+    
+    "He grabs her by the hair and starts pulling her over." 
+    
+    "I wrack my brain feverishly for something, {w=0.10}anything, I could possibly say or do that could prevent the scene happening before me."
+
+    play sound "audio/effects/cellphone.ogg"    
+   
+    stop music fadeout 10.0
+    play ambient lamp_buzz fadein 10.0 volume 1.0
+    
+    pause .25
+    
+    show short goon shocked
+    show tall goon shocked
+    
+    pause .25
+    
+    show short goon neutral
+    show tall goon neutral
+   
+    "The shorter goon whips out a flip phone from his pocket and holds it to his ear."
+    
+    "His eyes go wide."
+    
+    G1 "Boss!? {w=0.10}Uh, yeah we’re in the middle of it now."
+    
+    show short goon neutral
+    
+    G1 "Well, {w=0.10}not great."
+    
+    G1 "I think they might be with the force, but the first one was a dead end so we're not-, {w=0.10}I'm sorry it's just-,{nw}"
+    
+    show short goon shocked
+    
+    G1 "I think they might be with the force, but the first one was a dead end so we're not-, I'm sorry it's just-,{fast}wait what?!"
+    
+    G1 "That's not necessary I've-,{nw}" 
+    
+    show short goon neutral
+    
+    G1 "That's not necessary I've-,{fast} yes, alright, I understand." 
+    
+    G1 "Will do."
+    
+    play sound goon_phone
+    
+    pause 2.0
+    
+    G1 "Good news! {w=0.10}The Boss happened to be in the neighborhood, and has decided to handle the matter personally."
+    
+    G1 "You should feel honored! {w=0.10}Not everyone has the opportunity to get worked over by a man of his caliber."
+    
+    G1 "They'll be scrubbing you off the walls by the time he's done with ya!"
+    
+    show short goon neutral:
+        xcenter 0.6 xzoom -1.0
+        0.5
+        xzoom 1.0
+        easeout_quint 2.0 xcenter 0.8
+        xzoom -1.0
+        
+    show tall goon neutral:
+        xcenter 0.45
+        easein_quint 8.0 xcenter 1.2
+    
+    "He and his companion laugh and head for the exit, before passing through he turns his head back around and points with an evil grin." 
+    
+    show short goon grin
+    
+    G1 "Now don't you kids go anywhere! {w}The main event will begin shortly!"
+    
+    show short goon grin:
+        xzoom 1.0 xcenter 0.8
+        easeout_quint 2.0 xcenter 1.2
+        
+    
+    pause .25
+    
+    play sound lightSwitch
+    stop ambient
+    
+    scene black with fade
+    
+    "He shuts off the light and leaves the room."
+    
+    play sound "audio/effects/doorSlam.ogg"
+    
+    "The door closes behind them with a slam, {w=0.10}leaving only the darkness and the sounds of Trish's crying."
+    
+    window hide
+    
+    play sound trish_cry
+    
+    pause 8.0
+    
     
     return
