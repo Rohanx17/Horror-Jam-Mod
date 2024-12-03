@@ -119,7 +119,7 @@ screen bitn_menu:
     
     $ main_menu_button_img = bitn_menu_button
     
-    add bitn_menu_bg xysize (0.7, 1.0) xcenter 0.4
+    add bitn_menu_bg xysize (0.8, 1.0) xcenter 0.4
      
     frame:
          background bitn_menu_overlay 
@@ -133,16 +133,18 @@ screen bitn_menu:
         ypos 800
         use main_menu_buttons(main_menu_button_img,
             [
-                [ _("Bump In"), Hide(screen=None,transition=Dissolve(2))],
-                [ _("Bump Out"), Return()]
+                [ _("Bump In"), SetVariable("bitn_menu_fix", True)],
+                [ _("Bump Out"), MainMenu(confirm=False)]
             ] )
     
-    on "hide" action Jump("bitn_fooly_cooly_preintro")
+    if bitn_menu_fix == True:
+        timer 0.1 action Hide(screen=None,transition=Dissolve(2)), Jump("bitn_fooly_cooly_preintro") 
  
 define bitn_menu_bg = bitnScreens+"senza_titolo.png" #not 16:9, if it was the whole deal
 define audio.bitn_menu_theme = bitnMusic+"silent_bluffs_menu.ogg"
 define bitn_menu_overlay = im.MatrixColor("gui/overlay/main_menu.png", im.matrix.saturation(0)) 
 define bitn_menu_button = im.MatrixColor("gui/button/menubuttons/template_full_idle.png", im.matrix.saturation(0)) 
+default bitn_menu_fix = False
 image grey = Solid("#747574") 
 
 #Anon's Camera (do we have it in the original game?)
