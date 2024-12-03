@@ -79,11 +79,6 @@ image anim_mirror_ghost = Movie(play=bitnCgs+"mirrorAnon/mirror.webm", loop=Fals
 
 image car complete = Image(bitnCgs+"car complete.webp")
 
-#Moe Car
-image moeCar1 = bitnCgs+"moeCar/moe car 1.png"
-image moeCar2 = bitnCgs+"moeCar/moe car 2.png"
-image moeCar3 = bitnCgs+"moeCar/moe car 3.png"
-
 #BGs
 
 #Fooly Cooly Opening
