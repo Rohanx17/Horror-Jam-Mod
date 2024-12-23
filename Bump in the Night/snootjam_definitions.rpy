@@ -123,14 +123,16 @@ screen bitn_menu:
     
     style_prefix "main_menu"
 
-    add gui.main_menu_background
+    add gui.main_menu_background #for a smoother transition 
     
     $ main_menu_button_img = bitn_menu_button
     
     add bitn_menu_bg xysize (0.8, 1.0) xcenter 0.4
      
     frame:
-         background bitn_menu_overlay 
+         add "gui/overlay/main_menu.png":
+           at transform:
+               matrixcolor SaturationMatrix (0) 
     
     
     text _('Bump In The Night') size 70 xcenter 0.83 ycenter 0.3 
@@ -151,7 +153,6 @@ screen bitn_menu:
 define bitn_menu_bg = bitnScreens+"senza_titolo.png" #not 16:9, if it was the whole deal
 define audio.bitn_menu_theme = bitnMusic+"silent_bluffs_menu.ogg"
 define credits_theme = bitnMusic+"silent_bluffs_finale.ogg"
-define bitn_menu_overlay = im.MatrixColor("gui/overlay/main_menu.png", im.matrix.saturation(0)) 
 define bitn_menu_button = im.MatrixColor("gui/button/menubuttons/template_full_idle.png", im.matrix.saturation(0)) 
 default bitn_menu_fix = False
 image grey = Solid("#747574") 
