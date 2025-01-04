@@ -332,7 +332,7 @@ label bitn_Chapter3:
       easein 1 xcenter 0.90
     
     "She yelps as he pulls her out by the leg,"
- 
+    $ renpy.suspend_rollback(True)
     show goon1:
       easein_cubic 1 xcenter 0.45 
 
@@ -380,7 +380,9 @@ label bitn_Chapter3:
     #  pause 0.1
     #  linear 0.25 xzoom -1 
     #  repeat
-    
+    show goon1:
+      xcenter 0.45 yalign 0.1
+    $ renpy.suspend_rollback(False)
     "dangling her in the air like a plucked chicken while she swats at them out of reach."
 
     "The man wears a horrible, toothy grin."
@@ -564,13 +566,13 @@ label bitn_Chapter3:
     "In the chaos of our escape it had completely slipped my mind."
     "I grab my head with my free hand."
 
-    A "Ah shit"
+    A "Ah shit."
 
     # show carArgue with dissolve
 
     F "Oh my god, {w=0.25}I was right! {w=0.4}You led us there for some fucking bit didn't you?"
 
-    "I turn away in embarrassment "
+    "I turn away in embarrassment."
 
     A "Uh, yeah, {w=0.25}I brought you out tonight to give you a scare. {w=0.25}Thought if I caught you pissing yourself on camera there's no way you could ever top it."
    
