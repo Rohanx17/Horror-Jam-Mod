@@ -681,7 +681,8 @@
     
     "The beat up equipment created a sort of old school mystique that gave the air a sense of relaxation."
     
-    
+    $ renpy.suspend_rollback(True)
+
     play sound "audio/effects/carKick1.ogg"
     show anon neutral with dissolve:
         ycenter 1.0 xcenter 0.1
@@ -693,8 +694,13 @@
         ycenter 0.655
         ease_cubic 3.0 xcenter 0.8
     
-    pause 2.5
+    pause 3.0
     
+    show anon neutral:
+        xcenter 0.8 ycenter 0.655
+    
+    $ renpy.suspend_rollback(False) 
+
     "I climb my way up and dangle my legs off the side like a bench."
 
     show anon flip happy with dissolve
@@ -704,7 +710,9 @@
     F "About time."
     
     show anon neutral
-    
+
+    $ renpy.suspend_rollback(True)
+
     play sound "audio/effects/carKick2.ogg"
     show fang neutral with dissolve:
         ycenter 1.0 xcenter 0.1
@@ -734,9 +742,18 @@
 
     show fang flip neutral with dissolve:
        ycenter 0.655 xcenter 0.8       
-    
+
+    show reed neutral:
+        ycenter 0.655 xcenter 0.3
+    show anon flip neutral:
+        xcenter 0.6 ycenter 0.655     
+
+    $ renpy.suspend_rollback(False)
+
     "Eager, they all make their way over to join me."
-    
+
+    $ renpy.suspend_rollback(True)
+
     show trish unimpressed with dissolve:
         ycenter 1.0 xcenter 0.1
         easeout 1.0 ycenter 0.8
@@ -763,11 +780,20 @@
     
     show reed neutral with dissolve:
         ease 0.5 xcenter 0.3
+
+    show trish neutral:
+        ycenter 0.655 xcenter 0.2
+        
+    show anon flip neutral:
+        xcenter 0.6 ycenter 0.655
     
+    $ renpy.suspend_rollback(False)
+
     play music party_bgm volume 0.8 fadein 0.5
     
     "Reed and I reach down to Trish to help pull her up. {w=0.10}We whip out the case and dig in."
-    
+    $ renpy.suspend_rollback(True)
+
     play sound gang_beer_sfx
     
     show reed explanatory
@@ -794,7 +820,18 @@
         xcenter 0.81 ycenter 0.68 zoom 0.4
         easein 0.5 ycenter 0.60
     pause 1.0
+
+    show trish smile:
+        ycenter 0.655
+        
+    show fang flip happy:
+        ycenter 0.655
+
+    show anon flip grin:
+        ycenter 0.655
     
+    $ renpy.suspend_rollback(False)
+
     "Reed abstained and pulled out his pipe."
     
     play sound reed_lighter_sfx volume 1.5
@@ -916,7 +953,7 @@
         ease_cubic 0.5 ycenter 0.655      
         repeat
     
-    
+    hide beer_anon
     ANVL "played a rousing game of \"try to chuck your bottle through that open window\","
     
         
@@ -925,8 +962,6 @@
     show screen forwarding
     pause 0.5   
     hide screen forwarding
-
-    hide beer_anon
       
     
     show trish flip surprised behind reed:
@@ -1297,7 +1332,9 @@
     
     "It's so inconspicuous we must have passed it a half dozen times already."
     
-    show fang flip neutral at insecure_move_right(0.6)
+    show fang flip neutral:
+        xcenter 1.2 ycenter 0.655
+        easein 1.0 xcenter 0.6
     
     F "We didn't check in here did we?" 
     
