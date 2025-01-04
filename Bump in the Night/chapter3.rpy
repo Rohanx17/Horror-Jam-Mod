@@ -93,8 +93,8 @@ label bitn_Chapter3:
     "I shine the flashlight into the sea of darkness {w=0.25}as we step out into the underground lair before us."
     "The dust is thick and visible in the air."
     "Cobwebs crowded the walls and corners so densely,{w=0.25} you'd think they'd hired a city planner."
-    "Old lockers, {w=0.20}cabinets, {w=0.20}and doors dot the wall,"
-    "crates stacked wherever free space is available."
+    "Old lockers, {w=0.20}cabinets, {w=0.20}and doors dot the wall."
+    "Crates stacked wherever free space is available."
 
     A "Well, there you go, {w=0.25}same crap we've been looking at all night." 
     A "Not even any good commentary from the peanut gallery down here. {w=0.40}Can we please go now?"
@@ -119,7 +119,7 @@ label bitn_Chapter3:
     show reed neutral:
         xcenter 0.4 yalign 0.1 zoom 2.0
     show trish smug at tright
-     
+    with vpunch 
     A "Dammit Reed, {w=0.25}don't sneak up on me like that."
 #move reed back to normal distance
     show reed explanatory:
@@ -144,10 +144,10 @@ label bitn_Chapter3:
     hide black with Dissolve(1)
 
     "As we plunge deeper into the storeroom, {w=0.25}something about the place doesn't sit right with me."
-    "I know it was locked, {w=0.25} but it’s far too orderly. {w=0.40}Not a single paint tag in sight."
+    "I know it was locked, {w=0.25}but it’s far too orderly. {w=0.40}Not a single paint tag in sight."
     "The furnishings stuck out as rather modern by comparison, {w=0.25}like they were a recent addition…"
 
-    "Wait"
+    "Wait."
     "This place was locked."
     play music worried fadein 2.0
 
@@ -158,7 +158,7 @@ label bitn_Chapter3:
     with Dissolve(1)
 
     F "Not a chance. {w=0.25}You just don't want to get busted for whatever scheme you're planning."
-    "It's too late to weasel out now, {w=0.25}so be a good dweeb and keep that camera rolling, m’kay?"
+    F "It's too late to weasel out now, {w=0.25}so be a good dweeb and keep that camera rolling, m’kay?"
 
     show fang happy with dissolve
 
@@ -187,19 +187,17 @@ label bitn_Chapter3:
     Re "Uh guys, {w=0.25}I think you should see this."
 
     show fang:
-        linear 1.5 xcenter -0.5
+        easein_cubic 2.0 xcenter -0.2
 
     show trish neutral:
         xcenter 1.5 yalign 0.1
-
+        0.5
+        easein_cubic 1.0 xcenter 0.55
+        
     show reed neutral:
         xcenter 1.5 yalign 0.1  
-
-    show trish:
-        linear 1.5 xcenter 0.55
-
-    show reed:
-        linear 1.5 xcenter 0.7     
+        0.5
+        easein_cubic 1.0 xcenter 0.7     
 
     "Reed calls over from a pile of crates by the wall."
     "He's ripped open the top of one,{w} the inside sits stacked wall to wall with cellophane bricks." 
@@ -240,16 +238,18 @@ label bitn_Chapter3:
 
     pause 1
 
+    "Reed drops the cover on the crate, {nw}"
+     
     show fang:
-        linear 0.5 xcenter -0.5
+        easein 1.0 xcenter -0.5
 
     show reed:
-        linear 0.5 xcenter 1.5
+        ease 1.0 xcenter 1.5
 
     show trish:
-        linear 0.5 xcenter 1.5
-
-    "Reed drops the cover on the crate, {w=0.25}and instinctively we all scatter to the nearest hiding places we can find."    
+        easeout 1.0 xcenter 1.5
+     
+    extend "and instinctively we all scatter to the nearest hiding places we can find."        
 
     show black with Dissolve(1)
 
