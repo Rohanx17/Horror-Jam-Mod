@@ -110,6 +110,7 @@
     pause .5
     
     show fang very happy:
+     xcenter 0.6
      easeout 0.5 ycenter 0.6
      0.25
      easeout 0.5 ycenter 0.655
@@ -229,7 +230,7 @@
       
     T "Why is this thing even still here?"  
     
-    A "Hey. {w=0.25}even ghosts need hobbies." 
+    A "Hey, {w=0.25}even ghosts need hobbies." 
     
     A "Eternity's a long time you know."
     
@@ -339,7 +340,7 @@
     
     T "Those aren’t tits, those are floatation devices."
     
-   
+    $ renpy.suspend_rollback(True)
     
     show fang flip happy with dissolve:
         ycenter .655 xcenter 0.7
@@ -356,7 +357,15 @@
     
     show trish flip annoyed:
       easein 0.5 xcenter 0.4         
+
+    show trish flip annoyed:
+        xcenter 0.4 ycenter 0.655
+        
+    show fang flip happy:
+        xcenter 0.7 ycenter 0.655
     
+    $ renpy.suspend_rollback(False)
+
     "Fang feels up Trish’s breasts."
 
     F "You’re more buoyant than you’d give yourself credit for."
@@ -470,6 +479,8 @@
             
             "I consent."
             
+            $ renpy.suspend_rollback(True)
+            
             show trish flip unimpressed:
                 easeout 2.0 xcenter 0.8 zoom 3.0 blur 0
                 easeout 1.0 zoom 1.0
@@ -484,6 +495,14 @@
                   xzoom 1.0 zoom 1.0 ycenter .655 xcenter 0.5                
             with Dissolve(1)
             
+            show reed unimpressed:
+                zoom 1.0 xcenter 0.15 blur 0  
+                
+            show trish flip unimpressed:
+                zoom 1.0 xcenter 0.8 blur 0  
+            
+            $ renpy.suspend_rollback(False)
+
             "Reed and Trish peel us apart before anything paranormal happens. "
             show reed neutral
 
@@ -515,7 +534,8 @@
     T "Anyway, Pterosaurs don’t get above C cups, do they?"
         
     F "Eh, they’re supposed to get pretty big once you have children."
-        
+    $ renpy.suspend_rollback (True) 
+
     show black:
         alpha 0.0
         linear 4.5 alpha 1.0
@@ -539,6 +559,10 @@
     pause 2.0
     hide reed
 
+    show black:
+        alpha 1.0
+    
+    $ renpy.suspend_rollback (False)
     
     "The pair continue their girl talk and we head deeper into the factory."
     
@@ -564,7 +588,8 @@
         
     pause 1.5
     
-    show reed happy
+    show reed happy:
+        zoom 1.0 ycenter 0.655 xcenter 0.2
     
     Re "I found this neat raccoon skull for Fang’s collection."
     
@@ -614,7 +639,9 @@
     F "God, you're such a dweeb."
     
     A "Am I wrong?"
-    
+
+    $ renpy.suspend_rollback(True)
+
     show black:
         alpha 0.0
         linear 3.0 alpha 1.0
@@ -631,7 +658,13 @@
     
     show reed:
         ease 1.0 zoom 0.2 xcenter 0.5 ycenter 0.5
+
+    pause 1.0
         
+    show black:
+        alpha 1.0
+    
+    $ renpy.suspend_rollback(False)
 
     "She doesn't answer that and keeps plowing ahead as I try to keep up."
     
