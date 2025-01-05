@@ -357,18 +357,18 @@ label bitn_end_decision_1:
  #[the gangs sprites all enter together stage left in neutral pose]
  show reed neutral:
   xcenter -0.5 yalign 0.1
-  easein_cubic 1 xcenter 0.85  
+  ease 1.75 xcenter 0.85  
   xzoom -1
  show trish neutral:
   xcenter -0.5 yalign 0.1
-  easein_cubic 1 xcenter 0.6
+  easein 2.0 xcenter 0.6
   xzoom -1
  show fang neutral:
   xcenter -0.5 yalign 0.1
-  easein_cubic 1 xcenter 0.4
+  easeout 1.5 xcenter 0.4
  show anon neutral:
   xcenter -0.5 yalign 0.1
-  easein_cubic 1 xcenter 0.2
+  ease_cubic 2.0 xcenter 0.2
  pause 1.1
  Re "Well {w=0.25}this is the place!"
  F "Oh my god."
@@ -391,11 +391,11 @@ label bitn_end_decision_1:
  with dissolve
  show reed neutral:
   xzoom 1
-  easein_cubic 1 xcenter 1.5
+  ease 1 xcenter 1.5
  show fang neutral:
-  easein_cubic 1 xcenter 1.5
+  easeout 1 xcenter 1.5
  show anon neutral:
-  easein_cubic 1 xcenter 1.5
+  ease_cubic 1 xcenter 1.5
  show trish neutral:
   pause 0.5
   xzoom 1
@@ -404,7 +404,7 @@ label bitn_end_decision_1:
   pause 0.25
   xzoom 1
   pause 0.25
-  easein_cubic 1 xcenter 1.5
+  easein 1 xcenter 1.5
  pause 1.5
  #[screen fades to black]
  scene black with dissolve
@@ -435,12 +435,12 @@ label bitn_end_decision_1:
   xzoom -1
  with dissolve 
  show fang neutral:
-  easein_cubic 2 xcenter -0.5
+  easeout 1 xcenter -0.5
  with None
  show reed neutral:
-  linear 0.25 xcenter 0.70
+  ease 0.25 xcenter 0.70
  show trish unimpressed:
-  linear 0.25 xcenter 0.35
+  easein 0.25 xcenter 0.35
  "Fang stifles a laugh and leans in, whispering into my ear." 
  F "Level with me dweeb. {w=0.40}Do you actually believe in ghosts?"
  A "I’m just saying that I personally cannot take a mere mortal’s word on such a fantastical thing." 
@@ -477,9 +477,10 @@ label bitn_decision_2_yes:
  with dissolve
  Re "Right on."
  show reed neutral:
-  linear 0.5 xcenter 0.20
+  ease 1.0 xcenter 0.20
  show trish neutral:
-  linear 0.5 xcenter 0.70 xzoom -1
+  xzoom -1
+  easein 1.0 xcenter 0.70
  "Reed approaches the large iron door and gives the handle a shake,{nw}"
  play sound fang_attempt_door_sfx 
  extend " {w=0.25}but predictably it's locked tight."
