@@ -462,8 +462,8 @@ transform carBump:
     repeat
 
 #Characters
-define goon = Character("???", color="FFFFFF")
-define FC = Character("Fooly Cooly", color="72D0EA")
+define goon = Character("???", base, color="FFFFFF")
+define FC = Character("Fooly Cooly", base, color="72D0EA")
 
 #Misc
 default abandoned_door_opened = False
