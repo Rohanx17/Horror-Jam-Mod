@@ -161,7 +161,7 @@ label bitn_Chapter4:
     "He unrolls it and we all quietly gasp. {w}Knives, {w=0.30}scissors, {w=0.30}a ballpoint hammer, {w=0.30}and a collection of other tools are laid out in horrific fashion."     
     
     G1 "Alright Pink, {w=0.25}how about we start with you?"
-    
+    $ renpy.suspend_rollback(True)
     show tall goon neutral:
         xcenter 0.65
         easein_quint 3.0 xcenter -0.2
@@ -190,7 +190,21 @@ label bitn_Chapter4:
         ycenter 0.655 xcenter -0.2 zoom 0.7
         1.0
         ease 1.0 xcenter 0.4
+        pause 2.0
+    pause 2.0
+    camera:
+        zoom 1.5 ycenter 0.5
     
+    show reed neutral:
+        xcenter 0.4 zoom 0.7 ycenter 0.655
+    
+    show tall goon neutral:
+        xcenter 0.3 zoom 0.65 xzoom 1.0 ycenter 0.655
+    
+    show short goon grin:
+         xcenter 0.7 zoom 0.7 xcenter 0.7 ycenter 0.655        
+    
+    $ renpy.suspend_rollback(False)
     "The taller one grabs Reed's chair and pulls him over to the table."
         
     play sound reed_lighter_sfx
@@ -376,7 +390,9 @@ label bitn_Chapter4:
     
     "Reed yelps as the goon standing over him puts out his cig on the top of his maw."
     
-    G1 "Strike one.{w} he leans back in his chair {nw}"
+    G1 "Strike one." 
+
+    "He leans back in his chair {nw}"
 
     play sound goon_smoke volume 0.5
 
@@ -674,7 +690,7 @@ label bitn_Chapter4:
 
         "Thick streams of tears streak across a face full of despair."
 
-        Re "“{cps=10}.{w=0.25}.{w=0.25}.{w=0.25}{cps=50}Do whatever you want with me, {w=0.30}but please don't hurt my friends."
+        Re "{cps=10}.{w=0.25}.{w=0.25}.{w=0.25}{cps=50}Do whatever you want with me, {w=0.30}but please don't hurt my friends."
         
         Re "This is all my fault."
         
@@ -806,7 +822,7 @@ label bitn_Chapter4:
     G1 "Loyal to the end, eh?"
     
     G1 "Fine then, {w=0.30}we can do this {i}all{/i} night."
-    
+    $ renpy.suspend_rollback(True)
     show short goon angry:
         xcenter 0.6
         easeout_quint 0.5 xcenter 0.5
@@ -854,6 +870,10 @@ label bitn_Chapter4:
          0.25
          repeat 
     
+    show short goon angry:
+        xcenter 0.6
+    
+    $ renpy.suspend_rollback(False)
     "Another finger drops to the table, {w=0.30}Reed's body spasms like a beheaded chicken, {w=0.30}but there's no verbal response. "
     
     "The girls have completely broken down, {w=0.20}pleading on deaf ears for the safety of their friend." 
@@ -1000,7 +1020,7 @@ label bitn_Chapter4:
     show short goon grin
     
     G1 "They'll be scrubbing you off the walls by the time he's done with ya!"
-    
+    $ renpy.suspend_rollback(True)
     show short goon neutral:
         xcenter 0.6 xzoom -1.0
         0.5
@@ -1011,7 +1031,15 @@ label bitn_Chapter4:
     show tall goon neutral:
         xcenter 0.45
         easein_quint 8.0 xcenter 1.2
+        pause 3.0
+    pause 3.0
+    show tall goon neutral:
+       xcenter 1.2           
     
+    show short goon neutral:
+        xcenter 0.8 xzoom -1.0
+    
+    $ renpy.suspend_rollback(False)
     "He and his companion laugh and head for the exit, {w=0.30}before passing through {w=0.20}he turns his head back around and points with an evil grin." 
     
     show short goon grin
@@ -1056,7 +1084,7 @@ label bitn_Chapter4:
     T "This is both your faults!"
     T "Anon you're always getting into trouble with your stupid antics, {w=0.25}because you never think about any of the consequences of your bullshit!"
     T "It's like you don't care what happens or who you hurt so long as you think it's fucking funny!"
-    T "And Fang! {w=0.4} you're always enabling him! {w=0.4}Whenever he pushes the line on anything you're right there to cheer him on!"
+    T "And Fang! {w=0.4}You're always enabling him! {w=0.4}Whenever he pushes the line on anything you're right there to cheer him on!"
     T "You're probably the most stubborn person I've ever met! {w=0.4}If you had taken even a moment to consider the thoughts of anyone besides yourself, {w=0.25}we wouldn't be here right now!"
     
     "She starts to sob again."
@@ -1136,7 +1164,7 @@ label bitn_Chapter4:
     Moe "Lucy, {w=0.4}is that you?"
     F "...Uncle Moe!?"
     "He grabs his head and I can see the years of his life peel off though his worried expression, {w=0.2}quietly cursing to himself."
-
+    $ renpy.suspend_rollback(True)
     #[turn moe right and have him exit stage right, when he passes short goon he moves with moe off screen still facing left and changed to shocked]
     show moe
     with dissolve
@@ -1156,7 +1184,15 @@ label bitn_Chapter4:
     show tall goon neutral:
         easein 3.5 xcenter 0.75
     pause 4
-
+    
+    hide short goon
+    show tall goon neutral:
+        xcenter 0.75
+        
+    show moe:
+        xcenter 1.55
+            
+    $ renpy.suspend_rollback(False)
     "He turns around and grabs the shorter goon by his collar, {w=0.2} and promptly drags him into a nearby room."
 
     #[switch moe to neutral and move him just enough on screen right side to see most of his head]
@@ -1173,7 +1209,6 @@ label bitn_Chapter4:
     play sound doorSlam
     $ renpy.music.set_volume(0.10,delay=0.5,channel='music')
     hide moe neutral flip
-    hide short goon shocked flip
 
     #[lower the moe theme volume, and run the shouting loop, play some of the banging sounds as they feel fitting with what’s playing, then once it feels right cut the shouting loop and play gunshot sound at least once, or a grouping whatever sounds good, switch tall goon to shocked]
     play ambient arguing loop volume 4
@@ -1223,6 +1258,7 @@ label bitn_Chapter4:
 
     #[switch moe to stained/shocked and move him closer to the camera]
     show moe shocked bloodstain flip:
+        xcenter 0.5
         linear 1 zoom 1.5 ycenter 0.95
 
     Moe "Oh my little Lucy, {w=0.3}are you alright? {w=0.4}What did they do to you?"
@@ -1421,13 +1457,13 @@ label bitn_chapter4_continue:
     "We stand awkwardly in silence for a moment."
     A "Anyway, {w=0.25}I think it's about time we call a truce before someone ends up getting killed for real."
     F "Agreed, {w=0.25}I was getting kinda bored of it anyway."
-    A "Awesome, {w=0.25}...so what do you want to do next week?"
+    A "Awesome{cps=5}...{/cps}so what do you want to do next week?"
     
     #[switch fang to considering]
     show fang considering flip
     with dissolve
 
-    F "mmm, {w=0.15}we could go see a movie?"
+    F "Mmm, {w=0.15}we could go see a movie?"
     
     #[switch anon to happy]
     show anon happy
