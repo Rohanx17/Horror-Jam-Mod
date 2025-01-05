@@ -309,7 +309,8 @@
     pause 2.0
     
     hide reed    
-    
+    show black:
+        alpha 1.0
     "Reed hands Trish a bottle as he rejoins us." 
     
     "We leave the showroom and head into the factory proper."
@@ -357,7 +358,7 @@
     
     show trish flip annoyed:
       easein 0.5 xcenter 0.4         
-
+    pause 1.0
     show trish flip annoyed:
         xcenter 0.4 ycenter 0.655
         
